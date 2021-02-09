@@ -15,7 +15,7 @@ The Website is a **Music Recommendation System.**
 ## Part A
 
 ### **All Tasks**
-<em>Use ✅ when task is done</em>
+<em>Use ✅ when tasks or subtasks are done</em>
 
 > 1.  A presentation page with title and the name of people in the group. After 5 seconds, a second page will be displayed (Main Web page).
 >
@@ -142,7 +142,7 @@ The Website is a **Music Recommendation System.**
 
 ### **End Of All Tasks**
 <br>
----
+<hr>
 
 ## Part B
 ### **The Report.**
