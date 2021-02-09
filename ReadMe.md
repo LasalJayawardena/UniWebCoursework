@@ -20,15 +20,15 @@ The Website is a **Music Recommendation System.**
 >
 > 2.  The website should contain a signup form to enter the details of the user which is required to generate the personalized results depends on the chosen topic. 
 >
->> *   Personal Details (Name, Age, Gender, Occupation, Email etc) – 5 compulsory criteria
+>>    *   Personal Details (Name, Age, Gender, Occupation, Email etc) – 5 compulsory criteria
 >>
->> *  At least three different compulsory criteria to check the user’s preferences (Price, Brand, Features, Type etc)
+>>    *  At least three different compulsory criteria to check the user’s preferences (Price, Brand, Features, Type etc)
 >>
->> *  No of items to appear in the result list
+>>    *  No of items to appear in the result list
 >>
->> *  Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, user preferences and number of items. Do NOT use HTML5 validation for this part. (If HTML5 validation used zero marks will be awarded)
+>>    *  Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, user preferences and number of items. Do NOT use HTML5 validation for this part. (If HTML5 validation used zero marks will be awarded)
 >>
->> * If all compulsory fields are filled an alert should be generated to indicate the information submitted successfully. The pop up summary should contain "Dear Anna, Thank you for using MovieLens, The recommended results will be shown in a while.”
+>>    * If all compulsory fields are filled an alert should be generated to indicate the information submitted successfully. The pop up summary should contain "Dear Anna, Thank you for using MovieLens, The recommended results will be shown in a while.”
 >
 > 3.  Create gallery page that allows the user to view images. This page contains 5 thumbnail images and an area to display a larger image and associated description of that image. When the user selects a thumbnail image, the corresponding large image and the description of that image should display in the defined location on the form. You may use onMouseOver or radio buttons to select the thumbnail. (The images will be related to the topic you choose Eg: if you’re developing the movie recommendation application this could be movies about newly released/ most watched etc.)
 >
@@ -46,39 +46,39 @@ The Website is a **Music Recommendation System.**
 >
 > 10. The consistency of the style should be ensured using a unique external style sheet file. This will be used by the other members of the group though out the website. 
 >
->> * Main page
+>>    * Main page
 >>
->> * Navigation
+>>    * Navigation
 >
 > 11. The web site should contain a form to send comments about the web site. This form should include following
 >
->> * Form input fields for users to enter their details (name, email address)
+>>    * Form input fields for users to enter their details (name, email address)
 >>
->> * Option to rate the web site (using radio buttons or select)
+>>    * Option to rate the web site (using radio buttons or select)
 >>
->> * A button to reset the forms. When reset button is clicked the form should be reset.
+>>    * A button to reset the forms. When reset button is clicked the form should be reset.
 >>
->> * The form should be validated using JavaScript validation to check that the user has filled-in the compulsory fields - 'name', ‘email’ and 'rating'. (If HTML5 validation used zero marks will be awarded)
+>>    * The form should be validated using JavaScript validation to check that the user has filled-in the compulsory fields - 'name', ‘email’ and 'rating'. (If HTML5 validation used zero marks will be awarded)
 >>
->> * If the name, email and ratings are filled-in, the user should get an HTML popup window with the summary including the name, any comments and rating given on the form. 
+>>    * If the name, email and ratings are filled-in, the user should get an HTML popup window with the summary including the name, any comments and rating given on the form. 
 >>
->> * The pop box should give the below message format if all compulsory fields are filled.
+>>    * The pop box should give the below message format if all compulsory fields are filled.
 >>
->> * Eg: if the user entered "Anna" for their name, rated the site as "good" and entered "Very informative website", "Dear Anna, Thank you very much for your feedback. You have rated our site as Good and your comment was Very informative website."
+>>    * Eg: if the user entered "Anna" for their name, rated the site as "good" and entered "Very informative website", "Dear Anna, Thank you very much for your feedback. You have rated our site as Good and your comment was Very informative website."
 >
 > 12.  A JavaScript quiz should be created to increase the user engagement of the website.
 >> 
->> * The quiz should be implemented using JavaScript prompt box ().
+>>    * The quiz should be implemented using JavaScript prompt box ().
 >> 
->> * It should contain 5 questions related to the topic chosen.
+>>    * It should contain 5 questions related to the topic chosen.
 >> 
->> * Each question carries 2 marks and -1 for each wrong answer
+>>    * Each question carries 2 marks and -1 for each wrong answer
 >> 
->> *  The different badges (Gold, Silver, Bronze) will be awarded to users depending on their performance
+>>    *  The different badges (Gold, Silver, Bronze) will be awarded to users depending on their performance
 >> 
->> * When the quiz is completed users will be given the badge awarded with the points earned in a pop up box.
+>>    * When the quiz is completed users will be given the badge awarded with the points earned in a pop up box.
 >> 
->> * The message should contain “Congratulation! You have earned 12 points with a Silver badge”, please claim the points in your next purchase”
+>>    * The message should contain “Congratulation! You have earned 12 points with a Silver badge”, please claim the points in your next purchase”
 > 
 > 13.  Each page of the web site should include the title logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page.
 >
@@ -89,17 +89,17 @@ The Website is a **Music Recommendation System.**
 > 16. The website should contain the page to buy products related to the selected scenario. i.e. if your topic is on books, you could be selling books related items (Shelves, Book Marks etc) by the system.
 >
 >> 
->> * Personal details.
+>>    * Personal details.
 >> 
->> * At least 5 different products to choose from.
+>>    * At least 5 different products to choose from.
 >> 
->> * Number of items for each product.
+>>    * Number of items for each product.
 >> 
->> * Automatically provide the total price of the bill. 
+>>    * Automatically provide the total price of the bill. 
 >> 
->> * Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, product and number of items. (If HTML5 validation used zero marks will be awarded). 
+>>    * Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, product and number of items. (If HTML5 validation used zero marks will be awarded). 
 >> 
->> *  If the compulsory fields are filled-in, when the 'place order' button is clicked, the user should get a popup window with the summary of the order. For example, the text in the popup window could be something like: "Dear Anna, you have ordered 2 Oliver Twist Books at a cost of £20 each and 1 Harry Potter book at a cost of £50. Your total bill is £90."
+>>    *  If the compulsory fields are filled-in, when the 'place order' button is clicked, the user should get a popup window with the summary of the order. For example, the text in the popup window could be something like: "Dear Anna, you have ordered 2 Oliver Twist Books at a cost of £20 each and 1 Harry Potter book at a cost of £50. Your total bill is £90."
 >
 > 17.  Use JavaScript to create the functionality to increase / decrease the font size used on the website. The basic functionality should include two buttons - a button to make the font size smaller and a button to make the font size larger. This should be added in buy Products page.
 >
@@ -115,24 +115,24 @@ The Website is a **Music Recommendation System.**
 >
 > 23.  Create favorite list page which contains the information of the user’s past behavior which is generated by the AI model.
 >
->> * The information of the user’s behavior will vary on the topic you choose
->>     * Eg: Movie Recommendation system -> past watched<
+>>    * The information of the user’s behavior will vary on the topic you choose
+>>        * Eg: Movie Recommendation system -> past watched
 >> 
->> * Create a well-formed XML file to store information of the user’s past behavior.(Minimum 10 items) 
+>>    * Create a well-formed XML file to store information of the user’s past behavior.(Minimum 10 items) 
 >>
->> * Use JavaScript to read and display the data from the XML file.
+>>    * Use JavaScript to read and display the data from the XML file.
 >>
->> * Use CSS to display the XML information.
+>>    * Use CSS to display the XML information.
 >
 > 24.  Create JavaScript functionality to change the background and text color of the favorite page. (Use pulldown menus)
 >
 > 25.  Create a sign up form to subscribe for a personalized newsletter.
 >
->> * Compulsory form input fields (Name, email address)
+>>    * Compulsory form input fields (Name, email address)
 >>
->> * JavaScript validation to check compulsory fields are filled and valid email address
+>>    * JavaScript validation to check compulsory fields are filled and valid email address
 >>
->> * If all information are correct , a pop up message should be given with below format “Dear Anne, you have successfully subscribed for a personalized newsletter”
+>>    * If all information are correct , a pop up message should be given with below format “Dear Anne, you have successfully subscribed for a personalized newsletter”
 >
 > 26. Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2)
 > 27. Create editors page
