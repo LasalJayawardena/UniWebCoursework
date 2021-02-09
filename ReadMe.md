@@ -137,3 +137,33 @@ The Website is a **Music Recommendation System.**
 > 26. Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2)
 > 27. Create editors page
 > 28. Feel free to use additional JavaScript to add interactivity and increase ease of navigation.
+<br>
+
+### **End Of All Tasks**
+<br>
+---
+
+## Part B
+### **The Report.**
+
+Conduct a research on existing systems related to your chosen topic in order to get to know about the features and the context.
+* Introduction and Reference 
+* Research on existing systems (related to chosen topic) 
+* Technical Discussion 
+* Navigation techniques 
+* Color balance/Selection (appropriateness justified through color contrast test) 
+* Typography (font style/size appropriateness justified) 
+* Accessibility Techniques(Text, Tables, Forms, Images) 
+* Accessibility test 
+* Site Diagram 
+* Self-Reflection  
+<br>
+
+Tools to use:
+
+1. Color contrast check -Colour Contrast Check - snook.ca
+2. Accessibility check -WAVE Web Accessibility Evaluation Tool (webaim.org)
+3. Site Diagram – MS Visio, ConceptDraw, OmniGraffl
+
+
+## Final Deliverable - Live Demo needed
