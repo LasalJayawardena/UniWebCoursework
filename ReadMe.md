@@ -3,12 +3,12 @@ The Website is a **Music Recommendation System.**
 
 ## Main Functionalities
 <br>
-  1.  An eye catching design for the application  <br>
-  2.  A sign up process with user preferences  <br>
-  3.  Buy movie related products <br>
-  4.  Displaying favorite list (past read audio) <br>   
-  5.  Send feedback   <br>
-  6.  Gallery page (Newest Release musics/Top picks/Most listen)  <br>
+  1.  <em>An eye catching design for the application</em>  <br>
+  2.  <em>A sign up process with user preferences</em>  <br>
+  3.  <em>Buy movie related products </em><br>
+  4.  <em>Displaying favorite list (past read audio)</em> <br>   
+  5.  <em>Send feedback </em>  <br>
+  6.  <em>Gallery page (Newest Release musics/Top picks/Most listen) </em> <br>
 <hr>
 <br>
 
