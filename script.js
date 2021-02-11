@@ -6,7 +6,7 @@ fetch("./navbar/navbar.html")
     return response.text();
     })
     .then((data) => {
-    document.querySelector("Navbar").innerHTML = data;
+    document.querySelector("nav").innerHTML = data;
     })
     .catch((err) =>{
         console.log(err)
