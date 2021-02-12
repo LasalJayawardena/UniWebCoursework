@@ -10,6 +10,6 @@ fetch("./navbar/navbar.html")
     })
     .catch((err) =>{
         console.log(err)
-    })
+    });
         
 
