@@ -1,5 +1,5 @@
 html{
-    background: url(./cassette.jpg) no-repeat center center fixed; 
+    background: url(./final_casette.svg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -38,18 +38,15 @@ body{
 .authors{
     display: flex;
     justify-content: space-evenly;
+    color: white;
 }
 
-
-.flex-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 60px;
+/* cursor animations */
+.txt-rotate > .wrap { 
+    border-right: 0.15em solid #666;
+    animation: animated-cursor 400ms steps(29,end) infinite;
 }
+
 
 .name {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -94,17 +91,38 @@ p {
   to{width: 456px;}
 }
 
-/* cursor animations */
-.txt-rotate > .wrap { 
-    border-right: 0.15em solid #666;
-    animation: animated-cursor 400ms steps(29,end) infinite;
-}
-
+]
 @keyframes animated-cursor{
   from{
       border-right-color: rgba(102, 102, 102,.75);
     }
   to{
       border-right-color: transparent;
+    }
+}
+
+/* ======= Responsive Design =========== */
+
+@media screen and (max-width: 455px ){
+
+    html{
+        height: 100vh;
+        width: 100vw;
+        background-position: center 60px bottom 40px;
+        /* background-position: calc(100% - 100px) calc(100% - 10px); */
+    }
+
+    #logo{
+        border-radius: 50%;
+        width:50px;
+        height: 50px;
+        position: relative;
+        top: -63px;
+        right: 0px;
+    }
+
+    .heading{
+        font-size: 30px;
+        padding-left:150px;
     }
 }
