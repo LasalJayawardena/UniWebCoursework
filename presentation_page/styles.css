@@ -44,7 +44,6 @@ body{
 /* cursor animations */
 .txt-rotate > .wrap { 
     border-right: 0.15em solid #666;
-    animation: animated-cursor 400ms steps(29,end) infinite;
 }
 
 
@@ -77,29 +76,6 @@ body{
 }
 
 
-
-/* Animation */
-p {
-  animation: animated-text 4s linear 1s 1 normal both,
-             animated-cursor 600ms linear infinite;
-}
-
-/* text animation */
-
-@keyframes animated-text{
-  from{width: 0;}
-  to{width: 456px;}
-}
-
-]
-@keyframes animated-cursor{
-  from{
-      border-right-color: rgba(102, 102, 102,.75);
-    }
-  to{
-      border-right-color: transparent;
-    }
-}
 
 /* ======= Responsive Design =========== */
 
