@@ -86,11 +86,11 @@ main .doubleimg{
 }
 
 .fadeH{
-    animation: fadeinH ease-in 3s ;
+    animation: fadeinH ease-in 0.6s ;
 }
 
 .fadeP{
-    animation: fadeinP ease-in 3s ;
+    animation: fadeinP ease-in 0.6s ;
 }
 
 .a_des{
@@ -102,7 +102,7 @@ main .doubleimg{
 @keyframes fadeinH{
     0% {
         opacity: 0;
-        transform: translateX(-200px);
+        transform: translateX(-80px);
     }
 
     100%{
@@ -110,10 +110,10 @@ main .doubleimg{
     }
 }
 
-@keyframes fadeinH{
+@keyframes fadeinP{
     0% {
         opacity: 0;
-        transform: translateX(-200px);
+        transform: translateX(+80px);
     }
 
     100%{

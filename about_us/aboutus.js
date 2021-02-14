@@ -25,6 +25,8 @@ const addContent = function () {
 
     Description_h1.innerHTML = d_name;
     Description_p.innerHTML = d_desc;
+    Description_h1.classList.add("fadeH");
+    Description_p.classList.add("fadeP");
     main.innerHTML = "Get to know us :)"
 }; 
 
@@ -32,6 +34,8 @@ const removeContent = function () {
 
     Description_h1.innerHTML = "Welcome !";
     Description_p.innerHTML = "Hover over our images to get to know us!";
+    Description_h1.classList.remove("fadeH");
+    Description_p.classList.remove("fadeP");
     for (let i = 0; i < img_d.length; i++) {
       console.log(this == img_d[i]);
     }
