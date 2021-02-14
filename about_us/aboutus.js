@@ -19,6 +19,11 @@ const infodict = {
 }
 
 const addContent = function () {
+    for (let i = 0; i < img_d.length; i++) {
+        if (this != img_d[i]) {
+            img_d[i].classList.add("grey");
+        }
+    }
     var name = this.getAttribute("data-info");
     d_name = infodict[name][0];
     d_desc = infodict[name][1];
@@ -37,9 +42,23 @@ const removeContent = function () {
     Description_h1.classList.remove("fadeH");
     Description_p.classList.remove("fadeP");
     for (let i = 0; i < img_d.length; i++) {
-      console.log(this == img_d[i]);
+      if(this != img_d[i]){
+          img_d[i].classList.remove("grey");
+      };
     }
+}
 
+const removeMob = function () {
+
+    // Description_h1.innerHTML = "Welcome !";
+    // Description_p.innerHTML = "Hover over our images to get to know us!";
+    Description_h1.classList.remove("fadeH");
+    Description_p.classList.remove("fadeP");
+    for (let i = 0; i < img_d.length; i++) {
+        if (this != img_d[i]) {
+        img_d[i].classList.remove("grey");
+        }
+    }
 }
 
 const img_d= document.getElementsByClassName("author");
@@ -50,6 +69,8 @@ const main = document.querySelector("h1");
 for (let i = 0; i < img_d.length; i++) {
     img_d[i].addEventListener("mouseover", addContent);
     img_d[i].addEventListener("mouseleave", removeContent);
+    img_d[i].addEventListener("touchstart", addContent);
+    img_d[i].addEventListener("touchend", removeMob);
 }
 
 
