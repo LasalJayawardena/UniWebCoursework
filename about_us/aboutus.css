@@ -33,6 +33,14 @@ main{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+#menuToggle input:checked + label div {
+  background: #c99f9f;
+}
+
+#menu {
+  background-color: rgba(97, 96, 148, 0.7);
+  /* background-color: rgba(44, 44, 46, 0.9); */
+}
 
 #menuToggle label div {
     background-color: #cdcdcd;
@@ -40,8 +48,12 @@ main{
 
 #menuToggle a {
   text-decoration: none;
-  color: #37143b;
+  color: #99e1ee;
 }  
+
+#menuToggle a:hover {
+  color: #f7fbfd;
+}
 
 
 main img{
@@ -61,11 +73,11 @@ main .doubleimg{
 }
 
 .makespace1 {
-    transform: translateX(-100px);
+    transform: translateX(-75%);
 }
 
 .makespace2 {
-    transform: translateX(+100px);
+    transform: translateX(+75%);
 }
 
 .authorcontent h1{

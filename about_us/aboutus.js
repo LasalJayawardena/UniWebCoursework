@@ -30,8 +30,8 @@ const addContent = function () {
 
 const removeContent = function () {
 
-    Description_h1.innerHTML = "";
-    Description_p.innerHTML = "";
+    Description_h1.innerHTML = "Welcome !";
+    Description_p.innerHTML = "Hover over our images to get to know us!";
     for (let i = 0; i < img_d.length; i++) {
       console.log(this == img_d[i]);
     }
