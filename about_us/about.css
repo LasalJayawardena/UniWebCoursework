@@ -98,6 +98,7 @@ img{
 .social{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 15px;
     opacity: 0;
