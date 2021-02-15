@@ -1,0 +1,75 @@
+@import "../navbar/navbar.css";
+
+body {
+
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,115,192,0.9419117988992471) 41%, rgba(0,212,255,1) 100%);    padding: 0; */
+    background: url("./images/snow_mint.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: #2b1b1b;
+    height:  100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+h1{
+    color:rgb(9, 56, 56);
+    font-size: 3em;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 90vh;
+    width: 80vw;
+    background: rgba(9, 235, 235, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#menuToggle input:checked + label div {
+  background: #250755;
+}
+
+#menu {
+  background-color: rgba(97, 96, 148, 0.7);
+  /* background-color: rgba(44, 44, 46, 0.9); */
+}
+
+#menuToggle label div {
+    background-color: #614848;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #99e1ee;
+}  
+
+#menuToggle a:hover {
+  color: #f7fbfd;
+}
+
+.authors{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.dev{
+    padding: 0 100px;
+}
