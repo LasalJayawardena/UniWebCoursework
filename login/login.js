@@ -1,6 +1,7 @@
 const username = document.querySelector("#user");
 const password = document.querySelector("#pass");
 const btn = document.querySelector("#btn");
+const errp = document.querySelector("#error");
 
 // passwords are lasal, chamx, crazywheels
 const dummy_users = {
@@ -11,8 +12,8 @@ const dummy_users = {
 
 // Hash the password to check
 async function hash(target){
-   var buffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(target));
-   var chars = Array.prototype.map.call(new Uint8Array(buffer), ch => String.fromCharCode(ch)).join('');
+   let buffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(target));
+   let chars = Array.prototype.map.call(new Uint8Array(buffer), ch => String.fromCharCode(ch)).join('');
    return btoa(chars);
 };
 
@@ -71,14 +72,41 @@ const handleSubmit = async function(e){
 
     let hashed =  await hash(pass);
     if((uname in dummy_users) && (dummy_users[uname] == hashed)){
+        document.cookie= "login=success";
+        document.cookie= "user="+uname;
         window.location.href = "../main.html";
         return;
+    }else{
+        document.cookie = "login=failed";
+        window.location.href = "./login.html";
     }
-    
-    
 
+}
+
+const extractCookie = (cname) => {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+const HandleLoginFail = () => {
+    let login =  extractCookie("login");
+    if(login =="failed"){
+        errp.innerHTML = "Username or password does not match";
+    }
 }
 
 username.addEventListener("keyup", checkSubmit);
 password.addEventListener("keyup", checkSubmit);
 btn.addEventListener("click", handleSubmit);
+window.onload = HandleLoginFail();
