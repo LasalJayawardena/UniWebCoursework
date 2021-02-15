@@ -6,6 +6,13 @@
     box-sizing: border-box;
     font-family:'Poppins', sans-serif;
 }
+
+#btn:disabled{
+    background-color: #666; 
+    color: #414c53;
+    cursor: default;
+}
+
 body
 {
     overflow: hidden;
