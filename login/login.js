@@ -71,9 +71,11 @@ const handleSubmit = async function(e){
 
     let hashed =  await hash(pass);
     if((uname in dummy_users) && (dummy_users[uname] == hashed)){
-        console.log("noice")
+        window.location.href = "../main.html";
+        return;
     }
-    console.log("failed");
+    
+    
 
 }
 
