@@ -19,30 +19,30 @@ const infodict = {
 };
 
 const addContent = function () {
-  for (let i = 0; i < img_d.length; i++) {
-    if (this != img_d[i]) {
-      img_d[i].classList.add("grey");
+    for (let i = 0; i < img_d.length; i++) {
+        prof_images[i].classList.remove("ungray");
+        if (this == img_d[i]) {
+            social_btn[i].classList.remove("unipopup");
+            social_btn[i].classList.add("ipopup");
+            prof_images[i].classList.add("brighter");
+        } else{
+            prof_images[i].classList.add("gray");
+        }
     }
-  }
-  var name = this.getAttribute("data-info");
-  d_name = infodict[name][0];
-  d_desc = infodict[name][1];
 
-  Description_h1.innerHTML = d_name;
-  Description_p.innerHTML = d_desc;
-  Description_h1.classList.add("fadeH");
-  Description_p.classList.add("fadeP");
-  main.innerHTML = "Get to know us :)";
+
 };
 
 const removeContent = function () {
-  Description_h1.innerHTML = "Welcome !";
-  Description_p.innerHTML = "Hover over our images to get to know us!";
-  Description_h1.classList.remove("fadeH");
-  Description_p.classList.remove("fadeP");
+
   for (let i = 0; i < img_d.length; i++) {
-    if (this != img_d[i]) {
-      img_d[i].classList.remove("grey");
+    if (this == img_d[i]) {
+        social_btn[i].classList.add("unipopup");
+        social_btn[i].classList.remove("ipopup");
+        prof_images[i].classList.remove("brighter");
+    } else {
+        prof_images[i].classList.remove("gray");
+        prof_images[i].classList.add("ungray");
     }
   }
 };
@@ -59,15 +59,13 @@ const removeMob = function () {
   }
 };
 
-const img_d = document.getElementsByClassName("author");
-const Description_h1 = document.querySelector(".authorcontent h1");
-const Description_p = document.querySelector(".authorcontent p");
-const main = document.querySelector("h1");
+const img_d = document.querySelectorAll(".dev");
+const social_btn = document.querySelectorAll(".dev .social");
+const prof_images = document.querySelectorAll(".author");
 
 for (let i = 0; i < img_d.length; i++) {
-  img_d[i].addEventListener("mouseover", addContent);
+  img_d[i].addEventListener("mouseenter", addContent);
   img_d[i].addEventListener("mouseleave", removeContent);
-  img_d[i].addEventListener("touchstart", addContent);
-  img_d[i].addEventListener("touchend", removeMob);
+//   img_d[i].addEventListener("touchstart", addContent);
+//   img_d[i].addEventListener("touchend", removeMob);
 }
-

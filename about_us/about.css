@@ -13,6 +13,7 @@ body {
     height:  100vh;
     width: 100vw;
     overflow: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h1{
@@ -95,20 +96,66 @@ img{
 }
 
 .social{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    opacity: 0;
 }
 
 .social img{
     width: 35px;
     height: 35px;
     margin: 0 15px;
-    opacity: 0;
+}
+
+.social img:hover{
+    cursor: pointer;
 }
 
 .ipopup{
     animation: popup 1s ease ;
+    opacity: 1;
+}
+
+.unipopup{
+    animation: unpopup 1s ease ;
+    opacity: 0;
+}
+
+.gray{
+    filter: grayscale(100%);
+    animation: grayer ease-in-out 1.5s;
+}
+
+.ungray{
+    filter: grayscale(0%);
+    animation: ungrayer ease-in-out 1.5s;
+}
+
+@keyframes grayer{
+    0%{
+        filter: grayscale(0%);
+    }
+
+    100%{
+        filter: grayscale(100%);
+    }
+}
+
+@keyframes ungrayer{
+
+    0%{
+        filter: grayscale(100%);
+    }
+
+    100%{
+        filter: grayscale(0%);
+    }
+}
+
+.brighter{
+    filter: brightness(1.1);
 }
 
 
@@ -120,5 +167,17 @@ img{
 
     100%{
         opacity: 1;
+    }
+}
+
+
+@keyframes unpopup{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(20px);
     }
 }

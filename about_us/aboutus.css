@@ -37,7 +37,7 @@ main{
 }
 
 #menuToggle input:checked + label div {
-  background: #250755;
+  background: #1f1c24;
 }
 
 #menu {
