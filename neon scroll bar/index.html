@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">  
+</head>
+<body>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <section>
+        <h2>sexy scroll bar</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim auctor eros, vitae laoreet nisi molestie et.
+             Curabitur sed ligula pellentesque, condimentum diam eu, dignissim erat. Nam ut felis in odio placerat interdum.
+              Fusce tincidunt imperdiet sapien nec hendrerit. Phasellus bibendum iaculis augue a congue. Aenean tempor nibh magna,
+               sed tempus ligula congue nec. Suspendisse ipsum risus, maximus non justo rhoncus, malesuada finibus purus. Aenean
+                bibendum risus eu dui ornare, eget feugiat nibh gravida. Aenean nec dui lacinia arcu mattis ullamcorper. Phasellus
+                 tristique tempor imperdiet.<br>
+
+            Nullam mattis odio id vehicula maximus. Mauris libero ipsum, pretium sed est ac, egestas cursus massa. 
+            Nullam vitae lacus a mi volutpat viverra eget egestas nibh. Phasellus tincidunt, arcu vitae rhoncus 
+            facilisis, est ex euismod nisi, eget blandit risus elit et dolor. Duis tellus est, laoreet ut ornare 
+            eu, suscipit vitae ex. Nulla sagittis mauris non odio sagittis porttitor. Class aptent taciti sociosqu 
+            ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pretium euismod tincidunt. Etiam 
+            non pretium ligula, vel blandit leo. Nulla venenatis, quam quis sodales varius, libero orci aliquam 
+            ligula, quis pellentesque lorem justo id ex. Suspendisse pellentesque enim in tortor egestas maximus. 
+            Vivamus at arcu ac tortor tincidunt dictum. Fusce augue odio, tempus vitae laoreet eu, bibendum eu dolor.
+             Curabitur ullamcorper blandit sagittis. Mauris efficitur arcu ipsum, condimentum tempor dolor blandit id.
+              Phasellus quis risus nunc.<br><br><br>
+            
+            Vivamus id augue elementum erat egestas blandit nec quis erat. Curabitur interdum, tellus accumsan placerat cursus, 
+            quam odio egestas nibh, id volutpat nunc urna ac sapien. Nulla mi dolor, bibendum eu nisi id, accumsan laoreet ipsum.
+             Vivamus quis nisi rutrum, volutpat arcu eu, fringilla mauris. Vestibulum dolor ligula, pellentesque vel efficitur 
+             consequat, laoreet a velit. Integer vulputate sem quis nisl feugiat blandit. Curabitur quis lacinia leo. Aenean 
+             pulvinar, nisl sit amet semper finibus, nibh nunc efficitur urna, ac vulputate tellus lectus blandit sem. Suspendisse 
+             malesuada libero nibh, eget accumsan dui finibus vel. Maecenas non dui risus. Nulla tristique augue vel justo vehicula,
+              vitae semper leo maximus. Ut viverra elementum pulvinar. Suspendisse potenti. Mauris efficitur mattis leo sit amet
+               lobortis. Donec sollicitudin vehicula arcu sit amet gravida.<br><br><br>
+            
+            Aliquam pretium porttitor quam. Praesent feugiat lectus vel urna lacinia pretium. Nunc sit amet dignissim ligula. Maecenas
+             imperdiet ipsum in sapien sagittis rutrum. Vivamus enim diam, gravida ut aliquet eu, fermentum id libero. Donec sit amet 
+             ante sed est euismod luctus at in mi. Proin eu arcu vulputate nunc volutpat cursus in eu nibh. Nunc vel tristique magna,
+              pulvinar euismod lorem. Vestibulum vitae urna vitae nunc tempus auctor. Cras non gravida dolor, vel consectetur ante. 
+              Pellentesque luctus interdum fermentum. Maecenas rutrum eget ligula eu dignissim. Aenean convallis, velit mollis fermentum
+               pretium, tellus lorem rutrum erat, a tempor arcu augue eu metus.</p>
+    </section>
+    <script type="text/javascript">
+    var progress = document.getElementById('progressbar');
+    var totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+        var progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%"
+    }
+
+    </script>
+</body>
+</html>
