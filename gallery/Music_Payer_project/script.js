@@ -118,3 +118,5 @@ progressContainer.addEventListener('click', setProgress);
 
 //song ends
 audio.addEventListener('ended', nextSong)
+
+

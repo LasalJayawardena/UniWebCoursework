@@ -71,7 +71,7 @@ let TxtRotate = function (el, toRotate, period) {
   this.isDeleting = false;
 };
 
-let play = true;
+let play = false;
 
 // prototype to add tick method
 TxtRotate.prototype.tick = function () {
