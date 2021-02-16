@@ -17,7 +17,7 @@ The Website is a **Music Recommendation System.**
 ### **All Tasks**
 <em>Use ✅ when tasks or subtasks are done</em>
 
-> 1.  A presentation page with title and the name of people in the group. After 5 seconds, a second page will be displayed (Main Web page).
+> 1.  A presentation page with title and the name of people in the group. After 5 seconds, a second page will be displayed (Main Web page). ✅
 >
 > 2.  The website should contain a signup form to enter the details of the user which is required to generate the personalized results depends on the chosen topic. 
 >
@@ -104,7 +104,7 @@ The Website is a **Music Recommendation System.**
 >
 > 17.  Use JavaScript to create the functionality to increase / decrease the font size used on the website. The basic functionality should include two buttons - a button to make the font size smaller and a button to make the font size larger. This should be added in buy Products page.
 >
-> 18.  The About Us page contain four pictures of the members of the group. When the user moves the mouse over one picture, the details of that member should be displayed in an area on the page (Eg: you could use a div below the pictures). The details should include the name and role that that student took for the coursework (e.g. John Smith, Student 1).
+> 18.  The About Us page contain four pictures of the members of the group. When the user moves the mouse over one picture, the details of that member should be displayed in an area on the page (Eg: you could use a div below the pictures). The details should include the name and role that that student took for the coursework (e.g. John Smith, Student 1). ✅
 >
 > 19.  Each page of the web site should include the title, logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page.
 >
