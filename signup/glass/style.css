@@ -1,0 +1,124 @@
+body {
+  background-image: url(/images/bg.png);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+main {
+  background-image: url(/images/bg.png);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-image: url(/images/bg.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  background-image: url(/images/bg.png);
+  background: white;
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  display: flex;
+}
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: 5%;
+  right: 15%;
+}
+.circle2 {
+  bottom: 5%;
+  left: 10%;
+}
+
+.user{
+  padding-left: 6%;
+  padding-top:4%;
+}
+.heading{
+  position:relative;
+  color: white;
+  text-shadow: 0.5px 0.5px 6px black;
+  font-size: 30px;
+  padding-left: 133px;
+  margin-top: -80px;
+  
+}
+
+.caption {
+  padding-top:190px ;
+  margin-left: -200px;
+  font-size:55px;
+  text-shadow: 0.4px 0.4px 4px black;
+  font-weight: lighter;
+  margin-right: -300px;
+}
+
+.line1{
+  color: white;
+}
+.line2red{
+  color:hotpink;
+}
+.line2{
+  color: white;
+}
+.para {
+  padding-top:400px;
+  margin-left:-200px;
+  color: blue;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0.1px 0.1px 0.1px black;
+  font-size: 18px;
+}
+.parawhite{
+  color:white;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0.1px 0.1px 8px black;
+}
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid lightseagreen;
+  border-radius: 30px;
+  background: transparent;
+  margin-top: 600px;
+}
+.class{
+  height:50px;
+  width:auto;
+}
+
+.girl{
+  width:590px;
+  height:340px;
+  margin-top: 220px;
+}
