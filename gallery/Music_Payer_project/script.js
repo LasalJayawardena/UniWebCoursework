@@ -10,6 +10,8 @@ const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
+const frame = document.querySelector("#lyrics");
+
 //song titles
 const songs = ['bioject', 'bomdiggy','dancemonkey', 'panda', 'endsup', 'hotbox', 'eastside'];
 
@@ -85,8 +87,12 @@ playBtn.addEventListener('click', () => {
 
     if(isPlaying) {
         pauseSong();
+        let e = new CustomEvent("myCustomEvent", { detail: { play: false } });
+        frame.contentDocument.dispatchEvent(e);    
     }else {
         playSong();
+        let e = new CustomEvent("myCustomEvent", { detail: {"play":true} });
+        frame.contentDocument.dispatchEvent(e);    
     }
 });
 
