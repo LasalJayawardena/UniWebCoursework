@@ -81,7 +81,7 @@ TxtRotate.prototype.tick = function () {
     if(!play){
         setTimeout(() => {
         this.tick();
-        }, 1);
+        }, 10);
         return
     }
 
@@ -118,18 +118,14 @@ let lyrics = {
   eastside:"eastside",
 };
 
-const lyrics_generator = () => {
+const lyrics_generator = (s) => {
   let elements = document.getElementsByClassName("txt-rotate")[0];
-    // let toRotate = dmonkey[0];
-    let toRotate = lyrics["dancemonkey"];
+    let toRotate = lyrics[s];
     if (toRotate) {
-      //   JSON.parse to create js object
-      currText = new TxtRotate(elements, toRotate, "200", "DM");
+      currText = new TxtRotate(elements, toRotate, "200", s);
     }
 };
  
-
-const test= document.querySelector(".test");
 
 const handleE = (e) =>{
     play = e.detail["play"];
@@ -143,10 +139,7 @@ const handleE = (e) =>{
     }
     if(s && (s != currSong)){
       currSong = s;
-      let elements = document.getElementsByClassName("txt-rotate")[0];
-      elements.innerHTML="";
-      currText = new TxtRotate(elements, lyrics[currSong], "200", currSong);
-      // lyrics_generator();
+      lyrics_generator(s);
     }
 }
 
