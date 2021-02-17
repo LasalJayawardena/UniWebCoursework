@@ -11,63 +11,63 @@ function scroll() {
 }
 
 // ========================================
-let dmonkey =[ 
-`
-They say oh my god I see the way you shine
-Take your hand, my dear, and place them both in mine
-You know you stopped me dead while I was passing by
-And now I beg to see you dance just one more time
-Ooh I see you, see you, see you every time
-And oh my I, I, I like your style
-You, you make me, make me, make me wanna cry
-And now I beg to see you dance just one more time
-So they say
-Dance for me, dance for me, dance for me, oh, oh, oh
-I've never seen anybody do the things you do before
-They say move for me, move for me, move for me, ay, ay, ay
-And when you're done I'll make you do it all again
-I said oh my god I see you walking by
-Take my hands, my dear, and look me in my eyes
-Just like a monkey I've been dancing my whole life
-But you just beg to see me dance just one more time
-Ooh I see you, see you, see you every time
-And oh my I, I like your style
-You, you make me, make me, make me wanna cry
-And now I beg to see you dance just one more time
-So they say
-Dance for me, dance for me, dance for me, oh, oh, oh
-I've never seen anybody do the things you do before
-They say move for me, move for me, move for me, ay, ay, ay
-And when you're done I'll make you do it all again
-They say
-Dance for me, dance for me, dance for me, oh, oh, oh, oh, oh, oh, oh
-I've never seen anybody do the things you do before
-They say move for me, move for me, move for me, ay, ay, ay
-And when you're done I'll make you do it all again
-Ooh
-Woah-oh, woah-oh, oh
-Ooh
-Ah ah, ah
-They say
-Dance for me, dance for me, dance for me, oh, oh, oh
-I've never seen anybody do the things you do before
-They say move for me, move for me, move for me, ay, ay, ay
-And when you're done I'll make you do it all again
-They say
-Dance for me, dance for me, dance for me, oh, oh, oh, oh, oh, oh, oh
-I've never seen anybody do the things you do before
-They say move for me, move for me, move for me, ay, ay, ay
-And when you're done I'll make you do it all again
-All again
-`];
+// let dmonkey =[ 
+// `
+// They say oh my god I see the way you shine
+// Take your hand, my dear, and place them both in mine
+// You know you stopped me dead while I was passing by
+// And now I beg to see you dance just one more time
+// Ooh I see you, see you, see you every time
+// And oh my I, I, I like your style
+// You, you make me, make me, make me wanna cry
+// And now I beg to see you dance just one more time
+// So they say
+// Dance for me, dance for me, dance for me, oh, oh, oh
+// I've never seen anybody do the things you do before
+// They say move for me, move for me, move for me, ay, ay, ay
+// And when you're done I'll make you do it all again
+// I said oh my god I see you walking by
+// Take my hands, my dear, and look me in my eyes
+// Just like a monkey I've been dancing my whole life
+// But you just beg to see me dance just one more time
+// Ooh I see you, see you, see you every time
+// And oh my I, I like your style
+// You, you make me, make me, make me wanna cry
+// And now I beg to see you dance just one more time
+// So they say
+// Dance for me, dance for me, dance for me, oh, oh, oh
+// I've never seen anybody do the things you do before
+// They say move for me, move for me, move for me, ay, ay, ay
+// And when you're done I'll make you do it all again
+// They say
+// Dance for me, dance for me, dance for me, oh, oh, oh, oh, oh, oh, oh
+// I've never seen anybody do the things you do before
+// They say move for me, move for me, move for me, ay, ay, ay
+// And when you're done I'll make you do it all again
+// Ooh
+// Woah-oh, woah-oh, oh
+// Ooh
+// Ah ah, ah
+// They say
+// Dance for me, dance for me, dance for me, oh, oh, oh
+// I've never seen anybody do the things you do before
+// They say move for me, move for me, move for me, ay, ay, ay
+// And when you're done I'll make you do it all again
+// They say
+// Dance for me, dance for me, dance for me, oh, oh, oh, oh, oh, oh, oh
+// I've never seen anybody do the things you do before
+// They say move for me, move for me, move for me, ay, ay, ay
+// And when you're done I'll make you do it all again
+// All again
+// `,"Agiain;;;;;;;;;;;;;;;;;;;;;;;;;;;"];
 
-let TxtRotate = function (el, toRotate, period) {
+let TxtRotate = function (el, toRotate, period, song) {
   this.toRotate = toRotate;
   this.el = el;
   this.period = parseInt(period, 10) || 200;
   this.txt = "";
+  this.song = song;
   this.tick();
-  this.isDeleting = false;
 };
 
 let play = false;
@@ -75,6 +75,9 @@ let play = false;
 // prototype to add tick method
 TxtRotate.prototype.tick = function () {
 
+    if(currSong != "" && this.song != currSong){
+      return
+    }
     if(!play){
         setTimeout(() => {
         this.tick();
@@ -102,24 +105,49 @@ TxtRotate.prototype.tick = function () {
   }, delta);
 };
 
+let currText; 
+let currSong="";
+
+let lyrics = {
+  bioject:"bioject",
+  bomdiggy:"bomdiggy",
+  dancemonkey:"dancemonkey",
+  panda:"panda",
+  endsup:"endsup",
+  hotbox:"hotbox",
+  eastside:"eastside",
+};
+
 const lyrics_generator = () => {
-  let elements = document.getElementsByClassName("txt-rotate");
-  for (let i = 0; i < elements.length; i++) {
-    let toRotate = dmonkey[0];
-    let period = elements[i].getAttribute("data-period");
+  let elements = document.getElementsByClassName("txt-rotate")[0];
+    // let toRotate = dmonkey[0];
+    let toRotate = lyrics["dancemonkey"];
     if (toRotate) {
       //   JSON.parse to create js object
-      new TxtRotate(elements[i], toRotate, period);
+      currText = new TxtRotate(elements, toRotate, "200", "DM");
     }
-  }
 };
  
 
-window.onload = lyrics_generator;
 const test= document.querySelector(".test");
 
 const handleE = (e) =>{
     play = e.detail["play"];
+    let s = e.detail["song"];
+    if(!s){
+      if(currSong == ""){
+        s = "dancemonkey";
+      }else{
+        s=currSong;
+      }
+    }
+    if(s && (s != currSong)){
+      currSong = s;
+      let elements = document.getElementsByClassName("txt-rotate")[0];
+      elements.innerHTML="";
+      currText = new TxtRotate(elements, lyrics[currSong], "200", currSong);
+      // lyrics_generator();
+    }
 }
 
 window.document.addEventListener("myCustomEvent", handleE, false);
