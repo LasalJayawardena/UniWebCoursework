@@ -24,10 +24,13 @@ loadSong(songs[songIndex]);
 
 // updat song details 
 function loadSong(song) {
+
+    const isPlaying = musicContainer.classList.contains("play");
     title.innerText = song;
     audio.src = `musics/${song}.mp3`;
     cover.src = `images/${song}.jfif`;
-    
+    let e = new CustomEvent("myCustomEvent", { detail: { play: isPlaying, song:song } });
+    frame.contentDocument.dispatchEvent(e);    
 }
 
 //play song

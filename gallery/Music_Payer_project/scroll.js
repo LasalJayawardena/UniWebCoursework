@@ -64,7 +64,6 @@ All again
 let TxtRotate = function (el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
-  this.loopNum = 0;
   this.period = parseInt(period, 10) || 200;
   this.txt = "";
   this.tick();
@@ -83,8 +82,7 @@ TxtRotate.prototype.tick = function () {
         return
     }
 
-    let i = this.loopNum % this.toRotate.length;
-    let fullTxt = this.toRotate[i];
+    let fullTxt = this.toRotate;
 
     if (this.isDeleting) {
         this.txt = fullTxt.substring(0, this.txt.length - 1);
@@ -98,28 +96,16 @@ TxtRotate.prototype.tick = function () {
     let delta = 200 - Math.random() * 100;
 
 
-//   if (this.isDeleting) {
-//     delta /= 2;
-//   }
-
-//   if (!this.isDeleting && this.txt === fullTxt) {
-//     delta = this.period;
-//     this.isDeleting = true;
-//   } else if (this.isDeleting && this.txt === "") {
-//     this.isDeleting = false;
-//     this.loopNum++;
-//     delta = 200;
-//   }
 
   setTimeout(function () {
     that.tick();
   }, delta);
 };
 
-window.onload = function () {
+const lyrics_generator = () => {
   let elements = document.getElementsByClassName("txt-rotate");
   for (let i = 0; i < elements.length; i++) {
-    let toRotate = dmonkey;
+    let toRotate = dmonkey[0];
     let period = elements[i].getAttribute("data-period");
     if (toRotate) {
       //   JSON.parse to create js object
@@ -127,7 +113,9 @@ window.onload = function () {
     }
   }
 };
+ 
 
+window.onload = lyrics_generator;
 const test= document.querySelector(".test");
 
 const handleE = (e) =>{
