@@ -1,12 +1,16 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body{
+    /* background-image: url("./WR_bg.png"); */
+    background-color: rgb(78, 65, 65);
+    background-size: cover;
+    background-position: center;
 }
+
 
 button {
   cursor: pointer;
@@ -24,21 +28,10 @@ body {
   font: 16px/1.5 sans-serif;
 }
 
-.btn-group {
-  text-align: center;
-}
-
-.open-modal {
-  font-weight: bold;
-  background: steelblue;
-  color: var(--white);
-  padding: 0.75rem 1.75rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-}
 
 
 .modal {
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -119,3 +112,116 @@ body {
   transform: none;
 }
 
+h1{
+  color: bisque;
+  font-size: 2.5em;
+}
+
+.open-modal {
+  font-weight: bold;
+  background: rgb(71, 89, 104);
+  color: #c0baba;
+  padding: 0.75rem 1.75rem;
+  margin-top: 50px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(2,2,2,0.2);
+    width: 60%;
+    height: 80vh;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+
+.form__group {
+	 position: relative;
+	 padding: 25px 0 0;
+	 margin-top: 10px;
+	 width: 50%;
+}
+ .form__field {
+	 font-family: inherit;
+	 width: 100%;
+	 border: 0;
+	 border-bottom: 2px solid #9b9b9b;
+	 outline: 0;
+	 font-size: 1.3rem;
+	 color: #fff;
+	 padding: 7px 0;
+	 background: transparent;
+	 transition: border-color 0.2s;
+}
+ .form__field::placeholder {
+	 color: transparent;
+}
+ .form__field:placeholder-shown ~ .form__label {
+	 font-size: 1.3rem;
+	 cursor: text;
+	 top: 20px;
+}
+ .form__label {
+	 position: absolute;
+	 top: 0;
+	 display: block;
+	 transition: 0.2s;
+	 font-size: 1rem;
+	 color: #9b9b9b;
+}
+ .form__field:focus {
+	 padding-bottom: 6px;
+	 font-weight: 700;
+	 border-width: 3px;
+	 border-image: linear-gradient(to right, #11998e, #38ef7d);
+	 border-image-slice: 1;
+}
+ .form__field:focus ~ .form__label {
+	 position: absolute;
+	 top: 0;
+	 display: block;
+	 transition: 0.2s;
+	 font-size: 1rem;
+	 color: #11998e;
+	 font-weight: 700;
+}
+
+
+ .form__field:required, .form__field:invalid {
+	 box-shadow: none;
+}
+
+ 
+#part1{
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* transform: translateX(-100vw); */
+}
+
+#part2{
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

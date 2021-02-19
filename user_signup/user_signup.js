@@ -1,4 +1,4 @@
-const openEl = document.querySelector("[data-open]");
+const openEl = document.querySelector(".open-modal" );
 const closeEl = document.querySelector("[data-close]");
 const isVisible = "is-visible";
 const modal_win = document.getElementById("modal");
