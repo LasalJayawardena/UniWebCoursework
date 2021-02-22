@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./user_signup.css">
     </head>
     <body>
-
+        
         <!-- Modal  -->
 
         <div class="modal" id="modal" data-animation="slideInOutTop">
@@ -41,7 +41,7 @@
                 <h1>Sign up</h1>
 
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Name" name="name" id='name' autocomplete="off" />
+                    <input type="input" class="form__field" placeholder="Name" name="name" id='Name' autocomplete="off" />
                     <label for="name" class="form__label">Name</label>
                 </div>
                 
@@ -65,11 +65,15 @@
                     <label for="Occupation" class="form__label">Occupation</label>
                 </div>
                 
-                <button type="button" class="open-modal">Continue</button>
+                <!-- <button type="button" class="open-modal">Continue</button> -->
+                <div class="">
+                    <button id="goBack" type="button" class="btn">Cancel</button>
+                    <button type="button" class="btn continue">Continue</button>
+                </div>
             </div>
 
             <div id="part2">
-                <h1>Sign up</h1>
+                <h1>Additional Info</h1>
 
                 <div class="form__group field">
                     <input type="input" class="form__field" placeholder="Price" name="Price" id='Price' autocomplete="off" />
@@ -91,8 +95,11 @@
                     <label for="Genres" class="form__label">Genres</label>
                 </div>
                 
-                
+            <div class="">
+                <button type="button" class="btn back">Go Back</button>
                 <button type="button" class="open-modal">Submit</button>
+            </div>
+
             </div>
         </main>
 

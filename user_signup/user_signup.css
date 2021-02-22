@@ -25,13 +25,14 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
   font: 16px/1.5 sans-serif;
 }
 
 
 
 .modal {
-  z-index: 2;
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -117,7 +118,7 @@ h1{
   font-size: 2.5em;
 }
 
-.open-modal {
+.open-modal, .btn {
   font-weight: bold;
   background: rgb(71, 89, 104);
   color: #c0baba;
@@ -128,7 +129,9 @@ h1{
 
 }
 
-
+#goBack{
+  margin-right: 40px;
+}
 
 main {
     display: flex;
@@ -211,6 +214,10 @@ main {
   justify-content: center;
   align-items: center;
   /* transform: translateX(-100vw); */
+}
+
+.back{
+  margin-right: 30px;
 }
 
 #part2{
