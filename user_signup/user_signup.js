@@ -7,22 +7,29 @@ const part2 = document.querySelector("#part2");
 const c_btn = document.querySelector(".continue");
 const back_btn = document.querySelector(".back");
 const main_back_btn = document.querySelector("#goBack");
+const modal_content = document.getElementsByClassName("errormsgs")[0];
+
+
+const closeModal = () =>{
+    modal_win.classList.remove(isVisible);
+    modal_content.innerHTML = "";
+}
 
 closeEl.addEventListener("click", function () {
-  modal_win.classList.remove(isVisible);
+    closeModal();
 });
 
 
 document.addEventListener("click", (e) => {
-  if (e.target == document.querySelector(".modal.is-visible")) {
-    modal_win.classList.remove(isVisible);
-  }
+    if (e.target == document.querySelector(".modal.is-visible")) {
+        closeModal()
+    }
 });
 
 document.addEventListener("keyup", (e) => {
-  if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
-    modal_win.classList.remove(isVisible);
-  }
+    if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
+        closeModal()
+    }
 });
 
 c_btn.addEventListener("click", (e) =>{
@@ -45,6 +52,7 @@ const isEmail = (email) => {
 };
 
 const checkWeakPass = (password) => {
+    if(!password) return;
     let strength = false;
     let pass = password.trim();
     let pass_l = pass.length;
@@ -66,6 +74,7 @@ const checkWeakPass = (password) => {
     }
     return strength;
 }
+
 
 // ===================== Functionalities of the form ============================
 const Form_Name_el = document.getElementById("Name");
@@ -118,6 +127,7 @@ Form_Brands_el.addEventListener("input", e =>{
 
 Form_Features_el.addEventListener("input", e =>{
   F_Features = e.target.value;
+//   console.log(F_Features);
 });
 
 Form_Genres_el.addEventListener("input", e =>{
@@ -134,15 +144,70 @@ let check_F_Price;
 let check_F_Brands;
 let check_F_Features;
 let check_F_Genres;
+let all_OK;
 
 const checkAll = () =>{
-    check_F_name = (F_name != "")
+    check_F_name = (F_name != null && F_name != "")
     check_F_Email = isEmail(F_Email);
-    check_F_Password = iswe
+    check_F_Password = checkWeakPass(F_Password);
+    check_F_Gender = F_Password && F_Password != "";
+    check_F_Occupation = (F_Occupation && F_Occupation != "" && F_Occupation.length > 3);
+    check_F_Price = F_Price && F_Price != "" ;
+    check_F_Brands = F_Brands && F_Brands != "";
+    check_F_Features = F_Features != null && F_Features != "";
+    check_F_Genres = F_Genres && F_Genres != ""; 
+    all_OK = (check_F_name && check_F_Email && check_F_Gender && check_F_Occupation && check_F_Price && check_F_Brands && check_F_Features && check_F_Genres && check_F_name);
 }
 
 
+const createPara = msg => {
+    let p = document.createElement("p");
+    p.innerText = msg;
+    return p
+}
+
+const Add_appopiate_msg = () => {
+    if(!check_F_name){      
+        modal_content.appendChild(createPara("Please Fill in the name"));
+    }
+    if (!check_F_Email) {
+      modal_content.appendChild(createPara("Please provide avalid Email"));
+    }
+    if (!check_F_Password) {
+      modal_content.appendChild(createPara("Your Password is weak, try to providea strong one."));
+    }
+    if (!check_F_Gender) {
+      modal_content.appendChild(createPara("Please Fill in your gender"));
+    }
+    if (!check_F_Occupation) {
+      modal_content.appendChild(createPara("Dont Leave your occupation blank"));
+    }
+    if (!check_F_Price) {
+      modal_content.appendChild(createPara("Dont forget to fill your desired  price range"));
+    }
+    if (!check_F_Brands) {
+      modal_content.appendChild(createPara("Enter your Favourite Brands"));
+    }
+    if (!check_F_Features) {
+      modal_content.appendChild(createPara("Include some feaures you like..."));
+    }    
+    if (!check_F_Genres) {
+      modal_content.appendChild(createPara("Tell us about your favourite Genre"));
+    }
+    if(all_OK){
+        modal_content.appendChild(createPara("You will be directed to our main page!"));
+        setTimeout(() => {
+            window.location.href = "../main.html";
+        }, 3000);
+    }
+    
+    return;
+};
+
+// imporve the redirecton
+
 openEl.addEventListener("click", function () {
   checkAll();
+  Add_appopiate_msg();
   modal_win.classList.add(isVisible);
 });
