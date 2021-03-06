@@ -52,5 +52,11 @@ var lyrics = {
   godzilla,
   oldTown,
   marmalade,
-  thriftShop
+  thriftShop,
+  //rock
+  gRose,
+  intheEnd,
+  divide,
+  numb,
+  teenS
 };
