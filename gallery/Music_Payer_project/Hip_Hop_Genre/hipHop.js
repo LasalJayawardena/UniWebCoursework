@@ -1,19 +1,19 @@
 //song titles
 const songs = [
-  "gLikeme",
-  "celebration",
-  "getDownonit",
-  "uptownFunk",
-  "rapperDe"
+  "rockstar",
+  "panda",
+  "popStar",
+  "trapQueen",
+  "blueberry"
 ];
 
-const default_song = songs[3];
-let songIndex = 3;
+const default_song = songs[1];
+let songIndex = 1;
 
 const songTitle = {
-  gLikeme: "Black Eyed Peas, Shakira - GIRL LIKE ME",
-  celebration: "Kool and the Gang - Celebration",
-  getDownonit: "Kool and The Gang - Get Down On It",
-  uptownFunk: "Mark Ronson - Uptown Funk ft. Bruno Mars",
-  rapperDe: "Sugarhill Gang - Rapper's Delight",
+  rockstar: "DaBaby - Rockstar feat. Roddy Ricch",
+  panda: "Desiigner - Panda",
+  popStar: "DJ Khaled Drake - POP STAR",
+  trapQueen: "Fetty Wap - Trap Queen",
+  blueberry: "Lil Mosey - Blueberry Faygo",
 };

@@ -12,7 +12,7 @@ var lyrics = {
   thinkingoutloud,
   nothingStop,
   whitneyHL,
-  //Country  
+  //Country
   meanTobe,
   HotelC,
   rememberwhen,
@@ -31,4 +31,15 @@ var lyrics = {
   uptownFunk,
   rapperDe,
   //Hip Hop
+  rockstar,
+  panda,
+  popStar,
+  trapQueen,
+  blueberry,
+  //latin
+  Danza,
+  bailando,
+  despacito,
+  equis,
+  radio
 };
