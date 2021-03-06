@@ -41,5 +41,16 @@ var lyrics = {
   bailando,
   despacito,
   equis,
-  radio
+  radio,
+  //Pop
+  watermelon,
+  yummy,
+  whatGoes,
+  roses,
+  //rap
+  smack,
+  godzilla,
+  oldTown,
+  marmalade,
+  thriftShop
 };
