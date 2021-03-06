@@ -12,12 +12,12 @@ const cover = document.getElementById('cover');
 
 const frame = document.querySelector("#lyrics");
 
-//song titles
-const songs = ['bioject', 'bomdiggy','dancemonkey', 'panda', 'endsup', 'hotbox', 'eastside'];
-
+// //song titles
+// const songs = ['bioject', 'bomdiggy','dancemonkey', 'panda', 'endsup', 'hotbox', 'eastside'];
+// const default_song = songs[2]; 
 
 //keep track of songs
-let songIndex = 2;
+// let songIndex = 2;
 
 //Intially load song details
 loadSong(songs[songIndex]);
@@ -25,10 +25,12 @@ loadSong(songs[songIndex]);
 // updat song details 
 function loadSong(song) {
 
-    title.innerText = song;
-    audio.src = `musics/${song}.mp3`;
-    cover.src = `images/${song}.jfif`;
-    let e = new CustomEvent("myCustomEvent", { detail: { play: true, song:song } });
+    title.innerText = songTitle[song];
+    audio.src = `../musics/${song}.mp3`;
+    cover.src = `../images/${song}.jfif`;
+    let e = new CustomEvent("myCustomEvent", {
+      detail: { play: true, song: song, default_song },
+    });
     frame.contentDocument.dispatchEvent(e);    
 }
 
@@ -89,11 +91,15 @@ playBtn.addEventListener('click', () => {
 
     if(isPlaying) {
         pauseSong();
-        let e = new CustomEvent("myCustomEvent", { detail: { play: false } });
+        let e = new CustomEvent("myCustomEvent", {
+          detail: { play: false, default_song },
+        });
         frame.contentDocument.dispatchEvent(e);    
     }else {
         playSong();
-        let e = new CustomEvent("myCustomEvent", { detail: {"play":true} });
+        let e = new CustomEvent("myCustomEvent", {
+          detail: { play: true, default_song },
+        });
         frame.contentDocument.dispatchEvent(e);    
     }
 });
