@@ -19,17 +19,17 @@ The Website is a **Music Recommendation System.**
 
 > 1.  A presentation page with title and the name of people in the group. After 5 seconds, a second page will be displayed (Main Web page). ✅
 >
-> 2.  The website should contain a signup form to enter the details of the user which is required to generate the personalized results depends on the chosen topic. 
+> 2.  The website should contain a signup form to enter the details of the user which is required to generate the personalized results depends on the chosen topic. ✅ (Only final tweaks on UI left)
 >
->>    *   Personal Details (Name, Age, Gender, Occupation, Email etc) – 5 compulsory criteria
+>>    *   Personal Details (Name, Age, Gender, Occupation, Email etc) – 5 compulsory criteria✅
 >>
->>    *  At least three different compulsory criteria to check the user’s preferences (Price, Brand, Features, Type etc)
+>>    *  At least three different compulsory criteria to check the user’s preferences (Price, Brand, Features, Type etc)✅
 >>
->>    *  No of items to appear in the result list
+>>    *  No of items to appear in the result list✅
 >>
->>    *  Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, user preferences and number of items. Do NOT use HTML5 validation for this part. (If HTML5 validation used zero marks will be awarded)
+>>    *  Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, user preferences and number of items. Do NOT use HTML5 validation for this part. (If HTML5 validation used zero marks will be awarded)✅
 >>
->>    * If all compulsory fields are filled an alert should be generated to indicate the information submitted successfully. The pop up summary should contain "Dear Anna, Thank you for using MovieLens, The recommended results will be shown in a while.”
+>>    * If all compulsory fields are filled an alert should be generated to indicate the information submitted successfully. The pop up summary should contain "Dear Anna, Thank you for using MovieLens, The recommended results will be shown in a while.”✅
 >
 > 3.  Create gallery page that allows the user to view images. This page contains 5 thumbnail images and an area to display a larger image and associated description of that image. When the user selects a thumbnail image, the corresponding large image and the description of that image should display in the defined location on the form. You may use onMouseOver or radio buttons to select the thumbnail. (The images will be related to the topic you choose Eg: if you’re developing the movie recommendation application this could be movies about newly released/ most watched etc.)
 >
@@ -87,32 +87,9 @@ The Website is a **Music Recommendation System.**
 >
 > 15. Feel free to use additional JavaScript to add interactivity and increase ease of navigation.
 >
-> 16. The website should contain the page to buy products related to the selected scenario. i.e. if your topic is on books, you could be selling books related items (Shelves, Book Marks etc) by the system.
->
->> 
->>    * Personal details.
->> 
->>    * At least 5 different products to choose from.
->> 
->>    * Number of items for each product.
->> 
->>    * Automatically provide the total price of the bill. 
->> 
->>    * Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, product and number of items. (If HTML5 validation used zero marks will be awarded). 
->> 
->>    *  If the compulsory fields are filled-in, when the 'place order' button is clicked, the user should get a popup window with the summary of the order. For example, the text in the popup window could be something like: "Dear Anna, you have ordered 2 Oliver Twist Books at a cost of £20 each and 1 Harry Potter book at a cost of £50. Your total bill is £90."
->
-> 17.  Use JavaScript to create the functionality to increase / decrease the font size used on the website. The basic functionality should include two buttons - a button to make the font size smaller and a button to make the font size larger. This should be added in buy Products page.
->
 > 18.  The About Us page contain four pictures of the members of the group. When the user moves the mouse over one picture, the details of that member should be displayed in an area on the page (Eg: you could use a div below the pictures). The details should include the name and role that that student took for the coursework (e.g. John Smith, Student 1). ✅
 >
-> 19.  Each page of the web site should include the title, logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page.
->
-> 20.  Create editors page
->
-> 21.  Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2)
->
-> 22.   Feel free to use additional JavaScript to add interactivity and increase ease of navigation.
+> Tasks 16 to 22 Removed as Student 3wont be implemented.
 >
 > 23.  Create favorite list page which contains the information of the user’s past behavior which is generated by the AI model.
 >
