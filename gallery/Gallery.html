@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Gallery.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <title>Gallery 📷 Page</title>
+</head>
+<body>
+    <nav>
+    <div id="menuToggle"> 
+
+    <input name="toggle" type="checkbox" />
+    <label for="toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
+
+
+    <ul id="menu">
+        <a href="../../main.html"><li>Home</li></a>
+        <a href="#"><li>Gallery</li></a>
+        <a href="#"><li>Shop</li></a>
+        <a href="#"><li>Contact us</li></a>
+    </ul>
+
+    </div>
+    </nav>
+    <main>
+        <h1>Music Collection</h1>
+        <div class="vz-wrapper">
+            <!-- <audio id="myAudio" src="./weOwnit.mp3" data-author="Wiz Khalifa" data-title="We own It"></audio> -->
+            <audio id="myAudio" src="./music/allNight.mp3" data-author="Lionel Richie" data-title="All night long"></audio>
+            <audio id="myAudio2" src="./music/bailando.mp3" data-author="latin dude" data-title="Bailiando"></audio>
+            <audio id="myAudio3" src="./music/bioject.mp3" data-author="Shinpi" data-title="Bioject"></audio>
+            <audio id="myAudio4" src="./music/blueberry.mp3" data-author="ryan G" data-title="Blueberry"></audio>
+            <audio id="myAudio5" src="./music/bomdiggy.mp3" data-author="chairay" data-title="Bomdiggy"></audio>
+            
+            <div class="vz-wrapper -canvas">
+                <canvas id="myCanvas" width="800" height="500"></canvas>
+            </div>
+        </div>
+        <div class="diskTracks">
+            <div class="img-container"><img src="./images/allNight.jfif" data-audio="myAudio" alt=""></div>
+            <div class="img-container"><img src="./images/bailando.jfif" data-audio="myAudio2" alt=""></div>
+            <div class="img-container"><img src="./images/bioject.jfif" data-audio="myAudio3" alt=""></div>
+            <div class="img-container"><img src="./images/blueberry.jfif" data-audio="myAudio4" alt=""></div>
+            <div class="img-container"><img src="./images/bomdiggy.jfif" data-audio="myAudio5" alt=""></div>
+        </div>
+    </main>
+    <aside>
+        <div class="col1">
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Classical_Genre/classicalG.html">
+                    <img class="imgL" src="./album_images/classic.jpg" alt="Classical">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Country_Genre/countryG.html">
+                    <img class="imgL" src="./album_images/country.jpg" alt="Country">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Default_Genre/defaultG.html">
+                    <img class="imgL" src="./album_images/music.jpg" alt="Top Hits">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Dance_Genre/danceG.html">
+                    <img class="imgL" src="./album_images/dance.jpg" alt="Dance">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Funk_Genre/funkG.html">
+                    <img class="imgL" src="./album_images/funk.jpg" alt="Funk">
+                </a>
+            </div>     
+        </div>
+
+        <div class="col2">
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Hip_Hop_Genre/hipHopG.html">
+                    <img class="imgL" src="./album_images/hipop.jpg" alt="Hip Hop">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Latin_Genre/latinG.html">
+                    <img class="imgL" src="./album_images/latin.jpg" alt="Latin">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Pop_Genre/popG.html">
+                    <img class="imgL" src="./album_images/pop.jpg" alt="Pop">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Rap_Genre/rapG.html">
+                    <img class="imgL" src="./album_images/rap.jpg" alt="Rap">
+                </a>
+            </div>
+            <div class="genres">
+                <a target="_blank" href="./Genre_Music_Player/Rock_Genre/rockG.html">
+                    <img class="imgL" src="./album_images/rock.jpg" alt="Rock">
+                </a>
+            </div>    
+        </div>
+       
+        
+    </aside>
+    <script src="./Audio_Visualizer.js"></script>
+    <script src="./Gallery.js"></script>
+</body>
+</html>
