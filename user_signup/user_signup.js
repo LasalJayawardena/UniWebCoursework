@@ -1,213 +1,231 @@
-const openEl = document.querySelector(".open-modal" );
-const closeEl = document.querySelector("[data-close]");
-const isVisible = "is-visible";
-const modal_win = document.getElementById("modal");
-const part1 = document.querySelector("#part1");
-const part2 = document.querySelector("#part2");
-const c_btn = document.querySelector(".continue");
-const back_btn = document.querySelector(".back");
-const main_back_btn = document.querySelector("#goBack");
-const modal_content = document.getElementsByClassName("errormsgs")[0];
+// all Form1 elements  
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+const form = document.getElementById("form1");
+const container1 = document.getElementById("container1");
 
+// all Form2 elements 
+const Mname = document.getElementById("Maidenname");
+const surname = document.getElementById("surname");
+const gender = document.getElementById("gender");
+const occupation = document.getElementById("occupation");
+const form2 = document.getElementById("form2");
+const container2 = document.getElementById("container2");
 
-const closeModal = () =>{
-    modal_win.classList.remove(isVisible);
-    modal_content.innerHTML = "";
+// all Form3 elements 
+const FavouriteArtist = document.getElementById("FavouriteArtist");
+const price = document.getElementById("price");
+const MusicMode = document.getElementById("MusicMode");
+const Mail = document.getElementById("Mail");
+const container3 = document.getElementById("container3");
+
+// Show input error message in the small tag 
+// Also color the input boxes in error color
+const showError = (input, message) => {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control error';
+    const small = formControl.querySelector('small');
+    small.innerText = message;
 }
 
-closeEl.addEventListener("click", function () {
-    closeModal();
-});
+// Show success outline in input box
+const showSuccess = (input) => {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
 
-
-document.addEventListener("click", (e) => {
-    if (e.target == document.querySelector(".modal.is-visible")) {
-        closeModal()
+// Check email is valid using regex
+const checkEmail = (input) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(input.value.trim())) {
+        showSuccess(input);
+        return true;
+    } else {
+        showError(input, 'Email is not valid');
+        return false;
     }
-});
+}
 
-document.addEventListener("keyup", (e) => {
-    if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
-        closeModal()
-    }
-});
-
-c_btn.addEventListener("click", (e) =>{
-  part1.setAttribute("style", "z-index: 1; opacity:0;");
-  part2.setAttribute("style", "z-index: 2; opacity:1;");
-})
-
-back_btn.addEventListener("click", (e) => {
-  part1.setAttribute("style", "z-index: 2; opacity:1;");
-  part2.setAttribute("style", "z-index: 1; opacity:0;");
-});
-
-main_back_btn.addEventListener("click", (e) =>{
-  window.history.back();
-})
-
-const isEmail = (email) => {
-  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-};
-
-const checkWeakPass = (password) => {
-    if(!password) return;
-    let strength = false;
-    let pass = password.trim();
-    let pass_l = pass.length;
-    let cap_l = 0;
-    let num_d = 0; 
-    let format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-     
-    for(i=0;i<pass.length;i++)
-    {
-        if(pass[i] == pass[i].toUpperCase()){
-            cap_l++;
+// Check if a given input is emtpty, if so call show Error
+const checkRequired = (inputArr) => {
+    // Keep track whether all are not empty.
+    let allOk = true
+    inputArr.forEach((input) => {
+        if (input.value.trim() === '') {
+            showError(input, `${getFieldName(input)} is required`);
+            allOk = false
+        } else {
+            showSuccess(input);
         }
-        if (!isNaN(pass[i])) {
-          num_d++;
-        }    
-    }
-    if (pass_l < 6 || cap_l < 1 || num_d < 1 || !format.test(pass) ) {
-      strength = true;
-    }
-    return strength;
+    });
+    return allOk;
 }
 
-
-// ===================== Functionalities of the form ============================
-const Form_Name_el = document.getElementById("Name");
-const Form_Email_el = document.getElementById("Email");
-const Form_Password_el = document.getElementById("Password");
-const Form_Gender_el = document.getElementById("Gender");
-const Form_Occupation_el = document.getElementById("Occupation");
-const Form_Price_el = document.getElementById("Price");
-const Form_Brands_el = document.getElementById("Brands");
-const Form_Features_el = document.getElementById("Features");
-const Form_Genres_el = document.getElementById("Genres");
-
-let F_name;
-let F_Email;
-let F_Password;
-let F_Gender;
-let F_Occupation;
-let F_Price;
-let F_Brands;
-let F_Features;
-let F_Genres;
-
-Form_Name_el.addEventListener("input", e => {
-  F_name = e.target.value;
-});
-
-Form_Email_el.addEventListener("input", e =>{
-  F_Email = e.target.value;
-});
-
-Form_Password_el.addEventListener("input", e =>{
-  F_Password = e.target.value;
-});
-
-Form_Gender_el.addEventListener("input", e =>{
-  F_Gender = e.target.value;
-});
-
-Form_Occupation_el.addEventListener("input", e =>{
-  F_Occupation = e.target.value;
-});
-
-Form_Price_el.addEventListener("input", e =>{
-  F_Price = e.target.value;
-});
-
-Form_Brands_el.addEventListener("input", e =>{
-  F_Brands = e.target.value;
-});
-
-Form_Features_el.addEventListener("input", e =>{
-  F_Features = e.target.value;
-//   console.log(F_Features);
-});
-
-Form_Genres_el.addEventListener("input", e =>{
-  F_Genres = e.target.value;
-});
-
-
-let check_F_name;
-let check_F_Email;
-let check_F_Password;
-let check_F_Gender;
-let check_F_Occupation;
-let check_F_Price;
-let check_F_Brands;
-let check_F_Features;
-let check_F_Genres;
-let all_OK;
-
-const checkAll = () =>{
-    check_F_name = (F_name != null && F_name != "")
-    check_F_Email = isEmail(F_Email);
-    check_F_Password = checkWeakPass(F_Password);
-    check_F_Gender = F_Password && F_Password != "";
-    check_F_Occupation = (F_Occupation && F_Occupation != "" && F_Occupation.length > 3);
-    check_F_Price = F_Price && F_Price != "" ;
-    check_F_Brands = F_Brands && F_Brands != "";
-    check_F_Features = F_Features != null && F_Features != "";
-    check_F_Genres = F_Genres && F_Genres != ""; 
-    all_OK = (check_F_name && check_F_Email && check_F_Gender && check_F_Occupation && check_F_Price && check_F_Brands && check_F_Features && check_F_Genres && check_F_name);
+// Check whether a input is within a given length
+const checkLength = (input, min, max) => {
+    if (input.value.length < min) {
+        showError(input,
+            `${getFieldName(input)} must be at least ${min} characters`
+        );
+        return false;
+    } else if (input.value.length > max) {
+        showError(input,
+            `${getFieldName(input)} must be less than ${max} characters`
+        );
+        return false;
+    } else {
+        showSuccess(input);
+        return true;
+    }
 }
 
-
-const createPara = msg => {
-    let p = document.createElement("p");
-    p.innerText = msg;
-    return p
+// Check if the two passwords match
+const checkPasswordsMatch = (input1, input2)  => {
+    if (input1.value !== input2.value) {
+        showError(input2, 'Passwords do not match');
+        return false;
+    }
+    return true;
 }
 
-const Add_appopiate_msg = () => {
-    if(!check_F_name){      
-        modal_content.appendChild(createPara("Please Fill in the name"));
+// Get descriptor name for each input field, used for error messages
+const getFieldName = (input) => {
+    const name = input.getAttribute("data-desc");
+    return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
+//================Form Event listener Methods====================
+// Use javascipt event listeners over html because form onsubmit was messy.
+
+var form1Done = false;
+form.addEventListener('submit', (e)  =>{
+    // Stops the default action of the form1 which is a redirection,,
+    // In this case to prevent reloading the page.
+    e.preventDefault();
+
+    // Check if inputs are empty
+    let Rcheck = checkRequired([username, email, password, password2]);
+    let Lcheck = checkLength(username, 3, 15);
+    let Lcheck2 =checkLength(password, 6, 25);
+    let mailC = checkEmail(email);
+    let pass = checkPasswordsMatch(password, password2);
+
+    // Check if all the inputs in form1 are filled properly
+    // If not does not allow to proceed 
+    if(!(Rcheck && Lcheck && Lcheck2 && mailC && pass)){
+        return;
     }
-    if (!check_F_Email) {
-      modal_content.appendChild(createPara("Please provide avalid Email"));
+    // updates a global vaiable used finally to check if the entire formed is filled.
+    form1Done = true;
+
+    // Make the second form visible and hide the current one. 
+    container1.style.display = "none";
+    container2.style.display = "block";
+});
+
+var form2Done = false;
+form2.addEventListener("submit", (e) => {
+    // Stops the default action of the form2 which is a redirection,,
+    // In this case to prevent reloading the page.
+    e.preventDefault();
+
+    let Rcheck = checkRequired([Mname, surname, gender, occupation]);
+    let Lcheck = checkLength(Mname, 3, 20);
+    let Lcheck2 = checkLength(surname, 3, 20);
+    let Lcheck3 = checkLength(occupation, 4, 30);
+
+    // Check if all the inputs in form2 are filled properly
+    // If not does not allow to proceed 
+    if (!(Rcheck && Lcheck && Lcheck2 && Lcheck3)) {
+        return;
+    } 
+
+    // updates a global vaiable used finally to check if the entire formed is filled.
+    form2Done = true;
+
+    // Make the third form visible and hide the current one. 
+    container2.style.display = "none";
+    container3.style.display = "block";
+});
+
+form3.addEventListener("submit", (e) => {
+    // Stops the default action of the form3 which is a redirection,,
+    // In this case to prevent reloading the page.
+    e.preventDefault();
+
+    let Rcheck = checkRequired([FavouriteArtist, MusicMode, Mail]);
+    let Lcheck = checkLength(FavouriteArtist, 3, 20);
+    let Lcheck2 = checkLength(MusicMode, 3, 20);
+
+    // Check if all the inputs in form3 are filled properly
+    // If not does not allow to proceed 
+    if (!(Rcheck && Lcheck && Lcheck2)) {
+        return;
     }
-    if (!check_F_Password) {
-      modal_content.appendChild(createPara("Your Password is weak, try to providea strong one."));
+
+    // Corner case where it tackles the possibility of users manually 
+    // Changig display of the forms and submiting without filling properly.
+    if(!(form1Done && form2Done)){
+        return 
     }
-    if (!check_F_Gender) {
-      modal_content.appendChild(createPara("Please Fill in your gender"));
-    }
-    if (!check_F_Occupation) {
-      modal_content.appendChild(createPara("Dont Leave your occupation blank"));
-    }
-    if (!check_F_Price) {
-      modal_content.appendChild(createPara("Dont forget to fill your desired  price range"));
-    }
-    if (!check_F_Brands) {
-      modal_content.appendChild(createPara("Enter your Favourite Brands"));
-    }
-    if (!check_F_Features) {
-      modal_content.appendChild(createPara("Include some feaures you like..."));
-    }    
-    if (!check_F_Genres) {
-      modal_content.appendChild(createPara("Tell us about your favourite Genre"));
-    }
-    if(all_OK){
-        modal_content.appendChild(createPara("You will be directed to our main page!"));
-        setTimeout(() => {
-            window.location.href = "../main.html";
-        }, 3000);
-    }
+
+    // Start countdown for redirection.
+    redirect();
     
-    return;
+    // Make the modal appear.
+    modal_win.classList.add(isVisible);
+});
+
+
+// ========= Functionality for the price range animation =================
+const pRange = document.getElementById("price");
+const pH4 = document.querySelector("h4");
+const pSpan = document.querySelector("h4 span");
+const prefPrice = document.getElementById("prefPrice"); 
+let rangePercent = pRange.value;
+
+const displayPrice = () => {
+    // Get the value from slider
+    rangePercent = pRange.value;
+    prefPrice.innerHTML = `$ ${rangePercent}`;
+    pH4.innerHTML = "<span></span>"+rangePercent;
+    // Change hue of slider and bubble to make orangish look
+    pRange.style.filter = "hue-rotate(" + (rangePercent / 1000) * 200 + "deg)";
+    pH4.style.filter = "hue-rotate(" + ( (rangePercent / 1000)*200) + "deg)";
+    pH4.style.transform = `translateX(-1px) scale(${1 + rangePercent / 1000})`;
+    // Move the price bubble to right as the slider moves
+    pH4.style.left = `${rangePercent/10}%`;
 };
 
-// imporve the redirecton
 
-openEl.addEventListener("click", function () {
-  checkAll();
-  Add_appopiate_msg();
-  modal_win.classList.add(isVisible);
-});
+// Back button functionailites
+const cancelbtn = document.getElementById("cancelbtn");
+const back1 = document.getElementById("back1");
+const back2 = document.getElementById("back2");
+
+// Check whether the user came directly to current page 
+// If so direct to main else direct back to the page he came from.
+const cancelSignin = () => {
+    // Used 2 beause chrome landing page counts as 1.
+    if(history.length > 2){
+        history.back();
+    }else{
+        // used .href insteadof replace so the user can come back to form 
+        window.location.href = "../main.html";
+    }
+  
+};
+
+// Shows the first form while hiding the second one
+const backAction1 = () => {
+    container2.style.display = "none";
+    container1.style.display = "block";
+};
+
+// Shows the second form while hiding the third one
+const backAction2 = () => {
+    container3.style.display = "none";
+    container2.style.display = "block";
+};

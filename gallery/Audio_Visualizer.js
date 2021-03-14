@@ -1,257 +1,277 @@
 class AudioVisualizer {
-  INTERVAL = null;
-  FFT_SIZE = 512;
-  TYPE = { lounge: "renderLounge" };
+    INTERVAL = null;
+    FFT_SIZE = 512;
+    TYPE = { lounge: "renderLounge" };
 
-  constructor(cfg) {
-    this.isPlaying = false;
-    this.autoplay = cfg.autoplay || false;
-    this.loop = cfg.loop || false;
-    this.audio = document.getElementById(cfg.audio) || {};
-    this.canvas = document.getElementById(cfg.canvas) || {};
-    this.canvasCtx = this.canvas.getContext("2d") || null;
-    this.author = this.audio.getAttribute("data-author") || "";
-    this.title = this.audio.getAttribute("data-title") || "";
-    this.ctx = null;
-    this.analyser = null;
-    this.sourceNode = null;
-    this.frequencyData = [];
-    this.audioSrc = null;
-    this.duration = 0;
-    this.minutes = "00";
-    this.seconds = "00";
-    this.style = cfg.style || "lounge";
-    this.barWidth = cfg.barWidth || 2;
-    this.barHeight = cfg.barHeight || 2;
-    this.barSpacing = cfg.barSpacing || 5;
-    this.barColor = cfg.barColor || "#ffffff";
-    this.shadowBlur = cfg.shadowBlur || 10;
-    this.shadowColor = cfg.shadowColor || "#ffffff";
-    this.font = cfg.font || ["12px", "Helvetica"];
-    this.gradient = null;
-  }
-
-  setContext = function () {
-    try {
-      window.AudioContext = window.AudioContext || window.webkitAudioContext;
-      this.ctx = new window.AudioContext();
-      // console.log(this.ctx);
-      return this;
-    } catch (e) {
-      console.info("Web Audio API is not supported.", e);
+    constructor(cfg) {
+        this.isPlaying = false;
+        this.autoplay = cfg.autoplay || false;
+        this.loop = cfg.loop || false;
+        this.audio = document.getElementById(cfg.audio) || {};
+        this.canvas = document.getElementById(cfg.canvas) || {};
+        this.canvasCtx = this.canvas.getContext("2d") || null;
+        this.author = this.audio.getAttribute("data-author") || "";
+        this.title = this.audio.getAttribute("data-title") || "";
+        this.ctx = null;
+        this.analyser = null;
+        this.sourceNode = null;
+        this.frequencyData = [];
+        this.audioSrc = null;
+        this.duration = 0;
+        this.minutes = "00";
+        this.seconds = "00";
+        this.style = cfg.style || "lounge";
+        this.barWidth = cfg.barWidth || 2;
+        this.barHeight = cfg.barHeight || 2;
+        this.barSpacing = cfg.barSpacing || 5;
+        this.barColor = cfg.barColor || "#ffffff";
+        this.shadowBlur = cfg.shadowBlur || 10;
+        this.shadowColor = cfg.shadowColor || "#ffffff";
+        this.font = cfg.font || ["12px", "Helvetica"];
+        this.gradient = null;
     }
-  };
 
-  setAnalyser = function () {
-    this.analyser = this.ctx.createAnalyser();
-    this.analyser.smoothingTimeConstant = 0.6;
-    this.analyser.fftSize = this.FFT_SIZE;
-    return this;
-  };
-
-  setFrequencyData = function () {
-    this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
-    return this;
-  };
-
-  setBufferSourceNode = function () {
-    this.sourceNode = this.ctx.createBufferSource();
-    this.sourceNode.loop = this.loop;
-    this.sourceNode.connect(this.analyser);
-    this.sourceNode.connect(this.ctx.destination);
-
-    this.sourceNode.onended = function () {
-      clearInterval(INTERVAL);
-      this.sourceNode.disconnect();
-      this.resetTimer();
-      this.isPlaying = false;
-      this.sourceNode = this.ctx.createBufferSource();
-    }.bind(this);
-
-    return this;
-  };
-
-  setMediaSource = function () {
-    this.audioSrc = this.audio.getAttribute("src");
-    return this;
-  };
-
-  setCanvasStyles = function () {
-    this.gradient = this.canvasCtx.createLinearGradient(0, 0, 0, 300);
-    this.gradient.addColorStop(1, this.barColor);
-    this.canvasCtx.fillStyle = this.gradient;
-    this.canvasCtx.shadowBlur = this.shadowBlur;
-    this.canvasCtx.shadowColor = this.shadowColor;
-    this.canvasCtx.font = this.font.join(" ");
-    this.canvasCtx.textAlign = "center";
-    return this;
-  };
-
-  pausePlay = function () {
-    if (!this.isPlaying) {
-      return this.ctx.state === "suspended"
-        ? this.playSound()
-        : this.loadSound();
-    } else {
-      return this.pauseSound();
-    }
-  };
-
-  bindEvents = function () {
-    let _this = this;
-
-    document.addEventListener("click", async (e) => {
-      if (e.target === _this.canvas) {
-        e.stopPropagation();
-        await _this.pausePlay();
-        for (const d of disks) {
-            if (d.getAttribute("data-audio") == _this.audio.id) {
-                if (_this.ctx.state == "suspended") {
-                    d.style.animationPlayState = "paused";
-                } else {
-                    d.style.animationPlayState = "running";
-                }
-            }
+    setContext = function () {
+        try {
+            // create an AudioContext object.
+            this.ctx = new window.AudioContext();
+            return this;
+        } catch (e) {
+            console.info("Web Audio API is not supported.", e);
         }
-      }
-    });
+    };
 
-    if (_this.autoplay) {
-      _this.loadSound();
-    }
+    setAnalyser = function () {
+        // Creates an Analyzer node to get Audio time and frequency
+        this.analyser = this.ctx.createAnalyser();
+        // Set the average time between last buffer and current buffer
+        this.analyser.smoothingTimeConstant = 0.6;
+        // Assigns window size of FFT toget frequency data.
+        this.analyser.fftSize = this.FFT_SIZE;
+        return this;
+    };
 
-    return this;
-  };
+    setFrequencyData = function () {
+        // Create an unsigned 8 bit array
+        // Store the number of data avalues from this.analyser
+        this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
+        return this;
+    };
 
-  loadSound = function () {
-    let req = new XMLHttpRequest();
-    req.open("GET", this.audioSrc, true);
-    req.responseType = "arraybuffer";
-    this.canvasCtx.fillText(
-      "Loading...",
-      this.canvas.width / 2 + 10,
-      this.canvas.height / 2
-    );
+    setBufferSourceNode = function () {
+        // Create audio buffer node to play audio
+        this.sourceNode = this.ctx.createBufferSource();
+        this.sourceNode.loop = this.loop;
+        // Connect Analyser node to buffer node
+        this.sourceNode.connect(this.analyser);
+        this.sourceNode.connect(this.ctx.destination);
 
-    req.onload = function () {
-      this.ctx.decodeAudioData(
-        req.response,
-        this.playSound.bind(this),
-        this.onError.bind(this)
-      );
-    }.bind(this);
+        // This is when the audio is finished playing
+        // Had to bind this because this changes.
+        this.sourceNode.onended = function () {
+            clearInterval(INTERVAL);
+            // Disconnect audio node
+            this.sourceNode.disconnect();
+            // reset timer
+            this.resetTimer();
+            this.isPlaying = false;
+            // Create anew buffer node
+            this.sourceNode = this.ctx.createBufferSource();
+        }.bind(this);
 
-    req.send();
-  };
+        return this;
+    };
 
-  playSound = function (buffer) {
-    this.isPlaying = true;
+    setMediaSource = function () {
+        // set the audio source to the current song
+        this.audioSrc = this.audio.getAttribute("src");
+        return this;
+    };
 
-    if (this.ctx.state === "suspended") {
-      return this.ctx.resume();
-    }
+    setCanvasStyles = function () {
+        // create a gradient for the canvas
+        this.gradient = this.canvasCtx.createLinearGradient(0, 0, 0, 300);
+        // adds the stop color
+        this.gradient.addColorStop(1, this.barColor);
+        // Set gradient in canvas
+        this.canvasCtx.fillStyle = this.gradient;
+        // Applya shadowblur anda shadow color
+        this.canvasCtx.shadowBlur = this.shadowBlur;
+        this.canvasCtx.shadowColor = this.shadowColor;
+        this.canvasCtx.font = this.font.join(" ");
+        this.canvasCtx.textAlign = "center";
+        return this;
+    };
 
-    this.sourceNode.buffer = buffer;
-    this.sourceNode.start(0);
-    this.resetTimer();
-    this.startTimer();
-    this.renderFrame();
-    this.ctx.suspend();
-    this.isPlaying = false;
-  };
+    pausePlay = function () {
+        // function to pause or play when toggled
+        if (!this.isPlaying) {
+            return this.ctx.state === "suspended" ? this.playSound() : this.loadSound();
+        } else {
+            return this.pauseSound();
+        }
+    };
 
-  pauseSound = function () {
-    this.ctx.suspend();
-    this.isPlaying = false;
-  };
+    autoLoad = function () {
+        // load sound if autolay is true
+        if (this.autoplay) {
+            this.loadSound();
+        }
+        return this;
+    };
 
-  startTimer = function () {
-    let _this = this;
-    this.INTERVAL = setInterval(function () {
-      if (_this.isPlaying) {
-        let now = new Date(_this.duration);
-        let min = now.getHours();
-        let sec = now.getMinutes();
-        _this.minutes = min < 10 ? "0" + min : min;
-        _this.seconds = sec < 10 ? "0" + sec : sec;
-        _this.duration = now.setMinutes(sec + 1);
-      }
-    }, 1000);
-  };
+    loadSound = function () {
+        // Request an binary data buffer from audio element
+        // True topass to makesure it is async
+        let req = new XMLHttpRequest();
+        req.open("GET", this.audioSrc, true);
+        req.responseType = "arraybuffer";
+        // put loading text initilialy in canvas
+        this.canvasCtx.fillText(
+            "Loading...",
+            this.canvas.width / 2 + 10,
+            this.canvas.height / 2
+        );
 
-  resetTimer = function () {
-    let time = new Date(0, 0);
-    this.duration = time.getTime();
-  };
+        // Call function after request is complete
+        // To decode audio data
+        // Ifsuccesful play audio
+        // If not handle error
+        req.onload = function () {
+            this.ctx.decodeAudioData(
+                req.response,
+                this.playSound.bind(this),
+                this.onError.bind(this)
+            );
+        }.bind(this);
 
-  onError = function (e) {
-    console.info("Error decoding audio file. -- ", e);
-  };
+        // Send the request
+        req.send();
+    };
 
-  renderFrame = function () {
-    requestAnimationFrame(this.renderFrame.bind(this));
-    this.analyser.getByteFrequencyData(this.frequencyData);
+    playSound = function (buffer) {
+        this.isPlaying = true;
 
-    this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        if (this.ctx.state === "suspended") {
+            return this.ctx.resume();
+        }
 
-    this.renderTime();
-    this.renderText();
-    this.renderByStyleType();
-  };
+        this.sourceNode.buffer = buffer;
+        // Begin playback
+        this.sourceNode.start(0);
+        this.resetTimer();
+        this.startTimer();
+        this.renderFrame();
+        this.ctx.suspend();
+        this.isPlaying = false;
+    };
 
-  renderText = function () {
-    let cx = this.canvas.width / 2;
-    let cy = this.canvas.height / 2;
-    let correction = 10;
+    pauseSound = function () {
+        // pause player
+        this.ctx.suspend();
+        this.isPlaying = false;
+    };
 
-    this.canvasCtx.textBaseline = "top";
-    this.canvasCtx.fillText("by " + this.author, cx + correction, cy);
-    this.canvasCtx.font = parseInt(this.font[0], 10) + 8 + "px " + this.font[1];
-    this.canvasCtx.textBaseline = "bottom";
-    this.canvasCtx.fillText(this.title, cx + correction, cy);
-    this.canvasCtx.font = this.font.join(" ");
-  };
+    startTimer = function () {
+        // Used to provide the timer functionality for each song
+        this.INTERVAL = setInterval(() => {
+            if (this.isPlaying) {
+                let now = new Date(this.duration);
+                let min = now.getHours();
+                let sec = now.getMinutes();
+                this.minutes = min < 10 ? "0" + min : min;
+                this.seconds = sec < 10 ? "0" + sec : sec;
+                this.duration = now.setMinutes(sec + 1);
+            }
+        }, 1000);
+    };
 
-  renderTime = function () {
-    let time = this.minutes + ":" + this.seconds;
-    this.canvasCtx.fillText(
-      time,
-      this.canvas.width / 2 + 10,
-      this.canvas.height / 2 + 40
-    );
-  };
+    resetTimer = function () {
+        // Rest timer after song
+        let time = new Date(0, 0);
+        this.duration = time.getTime();
+    };
 
-  renderByStyleType = function () {
-    return this[this.TYPE[this.style]]();
-  };
+    onError = (e) => {
+        // Error handler for XMLHttpRequest
+        console.info("Error decoding audio file. -- ", e);
+    };
 
-  renderLounge = function () {
-    let cx = this.canvas.width / 2;
-    let cy = this.canvas.height / 2;
-    let radius = 140;
-    let maxBarNum = Math.floor(
-      (radius * 2 * Math.PI) / (this.barWidth + this.barSpacing)
-    );
-    let slicedPercent = Math.floor((maxBarNum * 25) / 100);
-    let barNum = maxBarNum - slicedPercent;
-    let freqJump = Math.floor(this.frequencyData.length / maxBarNum);
+    renderFrame = function () {
+        // repeatedly call anmation after each frame
+        requestAnimationFrame(this.renderFrame.bind(this));
 
-    for (let i = 0; i < barNum; i++) {
-      let amplitude = this.frequencyData[i * freqJump];
-      let alfa = (i * 2 * Math.PI) / maxBarNum;
-      let beta = ((3 * 45 - this.barWidth) * Math.PI) / 180;
-      let x = 0;
-      let y = radius - (amplitude / 12 - this.barHeight);
-      let w = this.barWidth;
-      let h = amplitude / 6 + this.barHeight;
+        // Copy the frequency data to analyser to analyser node
+        this.analyser.getByteFrequencyData(this.frequencyData);
+        // Erase piels in speicifed area for the specific animation
+        this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      this.canvasCtx.save();
-      this.canvasCtx.translate(cx + this.barSpacing, cy + this.barSpacing);
-      this.canvasCtx.rotate(alfa - beta);
-      this.canvasCtx.fillRect(x, y, w, h);
-      this.canvasCtx.restore();
-    }
-  };
+        this.renderTime();
+        this.renderText();
+        this.renderByStyleType();
+    };
+
+    renderText = function () {
+        // Function display author  and song name
+        let cx = this.canvas.width / 2;
+        let cy = this.canvas.height / 2;
+        let correction = 10;
+
+        // Set curent baseline
+        this.canvasCtx.textBaseline = "top";
+        this.canvasCtx.fillText("by " + this.author, cx + correction, cy);
+        // radix parsed to 10 in numeral system
+        this.canvasCtx.font = parseInt(this.font[0], 10) + 8 + "px " + this.font[1];
+        this.canvasCtx.textBaseline = "bottom";
+        this.canvasCtx.fillText(this.title, cx + correction, cy);
+        this.canvasCtx.font = this.font.join(" ");
+    };
+
+    renderTime = function () {
+        // This takes the calculated time in startTimer and display in canvas
+        let time = this.minutes + ":" + this.seconds;
+        this.canvasCtx.fillText(
+            time,
+            this.canvas.width / 2 + 10,
+            this.canvas.height / 2 + 40
+        );
+    };
+
+    renderByStyleType = function () {
+        // to call render renderLounge aimation
+        return this[this.TYPE[this.style]]();
+    };
+
+    renderLounge = function () {
+        let cx = this.canvas.width / 2;
+        let cy = this.canvas.height / 2;
+        let radius = 140;
+        // Calculate max number of bars
+        let maxBarNum = Math.floor(
+            (radius * 2 * Math.PI) / (this.barWidth + this.barSpacing)
+        );
+        let slicedPercent = Math.floor((maxBarNum * 25) / 100);
+        let barNum = maxBarNum - slicedPercent;
+        // Used as interval jumper in frequencies to be displayed
+        let freqJump = Math.floor(this.frequencyData.length / maxBarNum);
+
+        for (let i = 0; i < barNum; i++) {
+            let amplitude = this.frequencyData[i * freqJump];
+            let alfa = (i * 2 * Math.PI) / maxBarNum;
+            let beta = ((3 * 45 - this.barWidth) * Math.PI) / 180;
+            let x = 0;
+            let y = radius - (amplitude / 12 - this.barHeight);
+            let w = this.barWidth;
+            let h = amplitude / 6 + this.barHeight;
+
+            this.canvasCtx.save();
+            this.canvasCtx.translate(cx + this.barSpacing, cy + this.barSpacing);
+            this.canvasCtx.rotate(alfa - beta);
+            this.canvasCtx.fillRect(x, y, w, h);
+            this.canvasCtx.restore();
+        }
+    };
+
 }
 
 function createVisualizer(cfg) {
@@ -264,28 +284,29 @@ function createVisualizer(cfg) {
         .setBufferSourceNode()
         .setMediaSource()
         .setCanvasStyles()
-        .bindEvents();
-
+        .autoLoad();
 
     return visualizer;
 }
+
+// Variable to access current Audio Context 
 var curr;
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    curr = createVisualizer({
-      autoplay: true,
-      loop: true,
-      audio: "myAudio3",
-      canvas: "myCanvas",
-      style: "lounge",
-      barWidth: 2,
-      barHeight: 25,
-      barSpacing: 7,
-      barColor: "#cafdff",
-      shadowBlur: 20,
-      shadowColor: "#ffffff",
-      font: ["18px", "Helvetica"],
-    });
-  }
+
+document.addEventListener("DOMContentLoaded", () => 
+    {
+        curr = createVisualizer({
+            autoplay: true,
+            loop: true,
+            audio: "myAudio3",
+            canvas: "myCanvas",
+            style: "lounge",
+            barWidth: 2,
+            barHeight: 25,
+            barSpacing: 7,
+            barColor: "#cafdff",
+            shadowBlur: 20,
+            shadowColor: "#ffffff",
+            font: ["18px", "Helvetica"],
+        });
+    }
 );
