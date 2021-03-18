@@ -77,6 +77,7 @@ for(const img of imageLinks){
 
 document.addEventListener("click", async (e) => {
     if (e.target === curr.canvas) {
+        // Prevent Event bubbling
         e.stopPropagation();
         await curr.pausePlay();
         for (const d of disks) {

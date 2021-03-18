@@ -12,13 +12,6 @@ const cover = document.getElementById('cover');
 
 const frame = document.querySelector("#lyrics");
 
-// //song titles
-// const songs = ['bioject', 'bomdiggy','dancemonkey', 'panda', 'endsup', 'hotbox', 'eastside'];
-// const default_song = songs[2]; 
-
-//keep track of songs
-// let songIndex = 2;
-
 //Intially load song details
 loadSong(songs[songIndex]);
 

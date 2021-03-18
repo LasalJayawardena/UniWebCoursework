@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Gallery.css">
     <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./footer.css">
     <title>Gallery 📷 Page</title>
 </head>
 <body>
@@ -22,15 +23,16 @@
 
         <ul id="menu">
             <a href="../../main.html"><li>Home</li></a>
-            <a href="#"><li>Gallery</li></a>
+            <a href=""><li>Gallery</li></a>
             <a href="#"><li>Shop</li></a>
+            <a href="../user_signup/user_signup.html"><li>Sign Up</li></a>
             <a href="#"><li>Contact us</li></a>
         </ul>
 
         </div>
     </nav>
     <main>
-        <h1>Music Collection</h1>
+        <h1>Top Trending Beatz</h1>
         <div class="vz-wrapper">
             <audio id="myAudio" src="./music/allNight.mp3" data-author="Lionel Richie" data-title="All night long"></audio>
             <audio id="myAudio2" src="./music/bailando.mp3" data-author="latin dude" data-title="Bailiando"></audio>
@@ -109,6 +111,25 @@
        
         
     </aside>
+
+    
+    <footer>
+        <p>Created by <a target="_blank" href="../editors pages/lasal/main.html">Lasal Jayawardena</a></p>
+        <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <!-- Store wave object -->
+            <defs>
+                <path id="footer-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <!-- 114,137,218 -->
+            <g class="ocean">
+                <use xlink:href="#footer-wave" x="48" y="0" fill="rgba(73, 103, 198,0.7)" />
+                <use xlink:href="#footer-wave" x="48" y="3" fill="rgba(73, 103, 198,0.6)" />
+                <use xlink:href="#footer-wave" x="48" y="5" fill="rgba(73, 103, 198,0.3)" />
+                <use xlink:href="#footer-wave" x="48" y="7" fill="#7289da" />
+            </g>
+        </svg>
+    </footer>
+
     <script src="./Audio_Visualizer.js"></script>
     <script src="./Gallery.js"></script>
 </body>

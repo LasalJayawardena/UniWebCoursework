@@ -1,87 +1,80 @@
-
-window.onscroll = function () {
-  scroll();
-};
-
-function scroll() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
+// Functionality to scroll the lyrics genrated and update animation at top.
+const scroll = () => {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
 }
 
-let TxtRotate = function (el, toRotate, period, song) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.period = parseInt(period, 10) || 200;
-  this.txt = "";
-  this.song = song;
-  this.tick();
-};
+window.onscroll = scroll;
 
-let play = false;
 
-// prototype to add tick method
-TxtRotate.prototype.tick = function () {
-
-    if(currSong != "" && this.song != currSong){
-      return
-    }
-    if(!play){
-        setTimeout(() => {
+class TxtRotate {
+    constructor(el, toRotate, period, song) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.period = parseInt(period, 10) || 200;
+        this.txt = "";
+        this.song = song;
         this.tick();
-        }, 10);
-        return
     }
 
-    let fullTxt = this.toRotate;
+    tick = function () {
+        // If song has changed dont continue
+        if (currSong != "" && this.song != currSong) {
+            return;
+        }
+        // If paused then wait for 100 ms and check whether it is not paused
+        if (!play) {
+            setTimeout(() => this.tick(), 100);
+            return;
+        }        
+        // Adds extra letter and if all lyrics are diplayed then return.
+        if(this.txt.length < this.toRotate.length){
+            this.txt = this.toRotate.substring(0, this.txt.length + 1);
+        }
 
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
+        // Put text in container and call this function again
+        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
 
-    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+        let delta = 200 - Math.random() * 100;
 
-    let that = this;
-    let delta = 200 - Math.random() * 100;
+        setTimeout(() => this.tick(), delta);
+    };
+}
 
-
-
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
 
 let currText; 
 let currSong="";
 
 
-const lyrics_generator = (s) => {
-  let elements = document.getElementsByClassName("txt-rotate")[0];
-    let toRotate = lyrics[s];
+const lyrics_generator = (song) => {
+    let elements = document.querySelector(".txt-rotate");
+    let toRotate = lyrics[song];
     if (toRotate) {
-      currText = new TxtRotate(elements, toRotate, "400", s);
+        currText = new TxtRotate(elements, toRotate, "400", song);
     }
 };
  
 
 const handleE = (e) =>{
     play = e.detail["play"];
-    let s = e.detail["song"];
+    let song = e.detail["song"];
     let default_song = e.detail["default_song"];
-    if(!s){
-      if(currSong == ""){
-        s = default_song;
-      }else{
-        s=currSong;
-      }
+    // Song is not availableor if itis thefirst time play default song
+    if(!song){
+        if(currSong == ""){
+            song = default_song;
+        }else{
+            song = currSong;
+        }
     }
-    if(s && (s != currSong)){
-      currSong = s;
-      lyrics_generator(s);
+    // If song has changed then make a new lyrcs generator 
+    if(song && (song != currSong)){ 
+        currSong = song;
+        lyrics_generator(song);
     }
 }
 
+// Cutom event to check whenever a user hits pause, play or a song has changed.
 window.document.addEventListener("myCustomEvent", handleE, false);

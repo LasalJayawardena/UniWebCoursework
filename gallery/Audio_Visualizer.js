@@ -252,22 +252,27 @@ class AudioVisualizer {
         );
         let slicedPercent = Math.floor((maxBarNum * 25) / 100);
         let barNum = maxBarNum - slicedPercent;
-        // Used as interval jumper in frequencies to be displayed
+        // Used as interval jumper withinin frequencies to be displayed
         let freqJump = Math.floor(this.frequencyData.length / maxBarNum);
 
+        // logic to draw each bar
         for (let i = 0; i < barNum; i++) {
+            // Get amplitude from binary array
             let amplitude = this.frequencyData[i * freqJump];
             let alfa = (i * 2 * Math.PI) / maxBarNum;
             let beta = ((3 * 45 - this.barWidth) * Math.PI) / 180;
+            // Calculate x, y, width, height
             let x = 0;
             let y = radius - (amplitude / 12 - this.barHeight);
             let w = this.barWidth;
             let h = amplitude / 6 + this.barHeight;
 
+            // Save current state of canvas
             this.canvasCtx.save();
             this.canvasCtx.translate(cx + this.barSpacing, cy + this.barSpacing);
             this.canvasCtx.rotate(alfa - beta);
             this.canvasCtx.fillRect(x, y, w, h);
+            // Resaves the last saved canvas after applying all tranformationss
             this.canvasCtx.restore();
         }
     };
@@ -277,6 +282,7 @@ class AudioVisualizer {
 function createVisualizer(cfg) {
     let visualizer = new AudioVisualizer(cfg);
 
+    // Simulated a method chaining effect because this was returned from each method.
     visualizer
         .setContext()
         .setAnalyser()
@@ -294,6 +300,7 @@ var curr;
 
 document.addEventListener("DOMContentLoaded", () => 
     {
+        // Create an audio visualizerassoon as DOM elemnts are available
         curr = createVisualizer({
             autoplay: true,
             loop: true,

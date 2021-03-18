@@ -7,10 +7,18 @@
 
 body{
     display: flex;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: rgb(100, 92, 105);
+}
+
+img{
+    border-radius: 50%;
+    height: 250px;
+    float: right;
+    top: 50px;
 }
 
 .container{
