@@ -10,7 +10,7 @@
     <title>Gallery 📷 Page</title>
 </head>
 <body>
-    <nav>
+    <nav role="navigation">
         <div id="menuToggle"> 
 
         <input name="toggle" type="checkbox" />
@@ -31,9 +31,9 @@
 
         </div>
     </nav>
-    <main>
-        <h1>Top Trending Beatz</h1>
-        <div class="vz-wrapper">
+    <main role="main" aria-label="Audio Visualizer">
+        <h1 role="heading">Top Trending Beatz</h1>
+        <div class="vz-wrapper" role="document">
             <audio id="myAudio" src="./music/allNight.mp3" data-author="Lionel Richie" data-title="All night long"></audio>
             <audio id="myAudio2" src="./music/bailando.mp3" data-author="latin dude" data-title="Bailiando"></audio>
             <audio id="myAudio3" src="./music/bioject.mp3" data-author="Shinpi" data-title="Bioject"></audio>
@@ -52,57 +52,57 @@
             <div class="img-container"><img src="./images/bomdiggy.jfif" data-audio="myAudio5" alt=""></div>
         </div>
     </main>
-    <aside>
-        <div class="col1">
+    <aside role="grid">
+        <div class="col1" role="gridcell">
             <div class="genres">
                 <a target="_blank" href="./Genre_Music_Player/Classical_Genre/classicalG.html">
                     <img class="imgL" src="./album_images/classic.jpg" alt="Classical">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Country_Genre/countryG.html">
                     <img class="imgL" src="./album_images/country.jpg" alt="Country">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Default_Genre/defaultG.html">
                     <img class="imgL" src="./album_images/music.jpg" alt="Top Hits">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Dance_Genre/danceG.html">
                     <img class="imgL" src="./album_images/dance.jpg" alt="Dance">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Funk_Genre/funkG.html">
                     <img class="imgL" src="./album_images/funk.jpg" alt="Funk">
                 </a>
             </div>     
         </div>
 
-        <div class="col2">
-            <div class="genres">
+        <div class="col2" role="gridcell">
+            <div class="genres"role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Hip_Hop_Genre/hipHopG.html">
                     <img class="imgL" src="./album_images/hipop.jpg" alt="Hip Hop">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Latin_Genre/latinG.html">
                     <img class="imgL" src="./album_images/latin.jpg" alt="Latin">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Pop_Genre/popG.html">
                     <img class="imgL" src="./album_images/pop.jpg" alt="Pop">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Rap_Genre/rapG.html">
                     <img class="imgL" src="./album_images/rap.jpg" alt="Rap">
                 </a>
             </div>
-            <div class="genres">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Rock_Genre/rockG.html">
                     <img class="imgL" src="./album_images/rock.jpg" alt="Rock">
                 </a>
@@ -113,7 +113,7 @@
     </aside>
 
     
-    <footer>
+    <footer role="contentinfo"  aria-label="Page Creator">
         <p>Created by <a target="_blank" href="../editors pages/lasal/main.html">Lasal Jayawardena</a></p>
         <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <!-- Store wave object -->

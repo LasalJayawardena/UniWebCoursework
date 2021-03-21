@@ -60,7 +60,8 @@ h2 {
 }
 
 .form-control label {
-    color: #777;
+    /* color: #777; */
+    color: #312321;
     display: block;
     margin-bottom: 5px;
 }

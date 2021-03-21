@@ -124,6 +124,7 @@ footer{
     display: flex;
     justify-content: space-around;
     align-content: center;
+    cursor: pointer;
 }
 
 .img-container{

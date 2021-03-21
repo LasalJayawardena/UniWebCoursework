@@ -46,7 +46,7 @@ class AudioVisualizer {
         this.analyser = this.ctx.createAnalyser();
         // Set the average time between last buffer and current buffer
         this.analyser.smoothingTimeConstant = 0.6;
-        // Assigns window size of FFT toget frequency data.
+        // Assigns window size of FFT to get frequency data.
         this.analyser.fftSize = this.FFT_SIZE;
         return this;
     };
@@ -199,16 +199,18 @@ class AudioVisualizer {
 
     renderFrame = function () {
         // repeatedly call anmation after each frame
-        requestAnimationFrame(this.renderFrame.bind(this));
+        try {
+            requestAnimationFrame(this.renderFrame.bind(this));
 
-        // Copy the frequency data to analyser to analyser node
-        this.analyser.getByteFrequencyData(this.frequencyData);
-        // Erase piels in speicifed area for the specific animation
-        this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            // Copy the frequency data to analyser to analyser node
+            this.analyser.getByteFrequencyData(this.frequencyData);
+            // Erase piels in speicifed area for the specific animation
+            this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.renderTime();
-        this.renderText();
-        this.renderByStyleType();
+            this.renderTime();
+            this.renderText();
+            this.renderByStyleType();
+        } catch (e) {}
     };
 
     renderText = function () {

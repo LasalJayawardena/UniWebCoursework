@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  		<title>Highway - Free CSS Template</title>
+  		<title>Welcome to Euphoria 🎵</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./presentation.css">
@@ -12,7 +12,7 @@
 
 <body>
 
-    <nav>
+    <nav role="banner">
         <div class="logo">
             <a href="#">Euphoria</a>
             <!-- <img src="./logo.svg" alt=""> -->
@@ -20,21 +20,22 @@
       </div>
     </nav>
 
-    <main id="video-container">
-        <div class="video-overlay"></div>
-        <div class="video-content">
-            <div class="inner">
+    <main id="container" role="main">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="inner" role="heading">
               <h1><b>Welcome to</b> <em>Euphoria</em></h1>
               <p>Escape to a World of music</p>
             </div>
         </div>
-        <video autoplay="" loop="" muted>
+        <video autoplay="" loop="" muted role="region" aria-label="main video">
+            <!-- Video Credit -->
             <!-- https://www.pexels.com/video/playing-a-vinyl-record-on-a-spinning-turntable-2984380/ -->
         	<source src="./rotateVide.mp4" type="video/mp4" />
         </video>
     </main>
 
-    <footer>
+    <footer role="contentinfo"  aria-label="Developers">
         Created by Lasal Jayawardena, Chamika Wijeratne and Nithila Ariyapperuma  
     </footer>
 

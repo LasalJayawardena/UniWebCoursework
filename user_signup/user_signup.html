@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="./user_signup.css" >
         <link rel="stylesheet" href="./modal.css">
         <link rel="stylesheet" href="./footer.css">
-        <title>Sign up</title>
+        <title>Sign up 📝 </title>
     </head>
     <body>
             
         <!-- Modal  -->
 
-        <div class="modal" id="modal" data-animation="slideInOutTop">
+        <div class="modal" id="modal" data-animation="slideInOutTop" role="article">
             <div class="modal-dialog">
                 <header class="modal-header">
                     Thank you for you time!
@@ -24,7 +24,7 @@
                 <section class="modal-content">
                     <p><strong id="rMsg">Dear Anna, Thank you for registering with Euphoria, You will be directed to our Gallery page.</strong></p>
                 </section>
-                <footer class="modal-footer">
+                <footer class="modal-footer" role="timer">
                     Lets get the party started 🥳 🎉🥂 in <span id="reidrectTime">6s</span>
                 </footer>
             </div>
@@ -32,8 +32,8 @@
 
         <!-- End modal -->
 
-        <div class="container1" id="container1">
-            <form id="form1" class="form">
+        <div class="container1" id="container1" role="main">
+            <form id="form1" class="form" role="form">
                 <h2>Register With Us</h2>
                 <div class="form-control">
                     <label for="username">Username</label>
@@ -55,13 +55,13 @@
                     <input type="password" id="password2" placeholder="Re-enter password" data-desc="Re-Entered Password" >
                     <small>Error message</small>
                 </div>
-                <button id="cancelbtn" class="oppBtn" type="button" onclick="cancelSignin()">Cancel</button>
-                <button class="" type="submit">Continue</button>
+                <button id="cancelbtn" class="oppBtn" type="button" role="navigation" onclick="cancelSignin()">Cancel</button>
+                <button class="" type="submit" role="button">Continue</button>
             </form>
         </div>
 
-        <div class="container2" id="container2">
-            <form id="form2" class="form" onsubmit="handleform2()">
+        <div class="container2" id="container2" role="main">
+            <form id="form2" class="form" role="form">
                 <h2>Personal Details</h2>
                 <div class="form-control">
                     <label for="Maidenname">Maiden Name</label>
@@ -88,13 +88,13 @@
                     <input type="text" id="occupation" placeholder="Enter your current Occupatin" data-desc="Occupation" >
                     <small>Error message</small>
                 </div>
-                <button id="back1" class="oppBtn" type="button" onclick="backAction1()">Go Back</button>
-                <button class="" type="submit">Continue</button>
+                <button id="back1" class="oppBtn" type="button" onclick="backAction1()" role="button">Go Back</button>
+                <button class="" type="submit" role="button">Continue</button>
             </form>
         </div>
 
-        <div class="container3" id="container3">
-            <form id="form3" class="form" onsubmit="handleform3()">
+        <div class="container3" id="container3" role="main">
+            <form id="form3" class="form" role="form">
                 <h2>Your Preferences</h2>
                 <div class="form-control">
                     <label for="FavouriteArtist">Favourite Artist</label>
@@ -124,12 +124,12 @@
                     </select>
                     <small>Error message</small>
                 </div>
-                <button id="back2" class="oppBtn" type="button" onclick="backAction2()">Go Back</button>
-                <button class="open-modal" type="submit">Submit</button>
+                <button id="back2" class="oppBtn" type="button" onclick="backAction2()" role="button">Go Back</button>
+                <button class="open-modal" type="submit" role="button">Submit</button>
             </form>
         </div>
 
-        <footer id="page-footer">
+        <footer id="page-footer" role="contentinfo"  aria-label="Page Creator">
             <p>Created by <a target="_blank" href="../editors pages/lasal/main.html">Lasal Jayawardena</a></p>
             <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <!-- Store wave object -->

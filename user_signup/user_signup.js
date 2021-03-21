@@ -97,7 +97,7 @@ const getFieldName = (input) => {
 }
 
 //================Form Event listener Methods====================
-// Use javascipt event listeners over html because form onsubmit was messy.
+// Usef javascipt event listeners over html because form onsubmit was messy.
 
 var form1Done = false;
 form.addEventListener('submit', (e)  =>{
@@ -201,7 +201,6 @@ const displayPrice = () => {
 
 
 // Back button functionailites
-const cancelbtn = document.getElementById("cancelbtn");
 const back1 = document.getElementById("back1");
 const back2 = document.getElementById("back2");
 
