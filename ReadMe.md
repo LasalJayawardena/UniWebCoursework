@@ -25,7 +25,7 @@ The Website is a **Music Recommendation System.**
 >>
 >>    *  At least three different compulsory criteria to check the user’s preferences (Price, Brand, Features, Type etc)✅
 >>
->>    *  No of items to appear in the result list✅
+>>    *  No of items to appear in the result list✅ not sure about thi yet.
 >>
 >>    *  Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, user preferences and number of items. Do NOT use HTML5 validation for this part. (If HTML5 validation used zero marks will be awarded)✅
 >>
@@ -33,13 +33,13 @@ The Website is a **Music Recommendation System.**
 >
 > 3.  Create gallery page that allows the user to view images. This page contains 5 thumbnail images and an area to display a larger image and associated description of that image. When the user selects a thumbnail image, the corresponding large image and the description of that image should display in the defined location on the form. You may use onMouseOver or radio buttons to select the thumbnail. (The images will be related to the topic you choose Eg: if you’re developing the movie recommendation application this could be movies about newly released/ most watched etc.)✅
 >
-> 4.  Each page of the web site should include the title logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page.
+> 4.  Each page of the web site should include the title logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page.✅ - Waiting for logo....
 >
-> 5.  Create a page editors page
+> 5.  Create a page editors page✅
 >
-> 6.  Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2)
+> 6.  Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2) - Still waiting ... 
 >
-> 7.  Feel free to use additional JavaScript to add interactivity and increase ease of navigation.
+> 7.  Feel free to use additional JavaScript to add interactivity and increase ease of navigation.✅
 > 
 > 8.  The Main page should be designed in a way that the user can access several parts of the web site. The links on the main page should look like buttons and have a hover effect. This should be implemented using CSS
 >
