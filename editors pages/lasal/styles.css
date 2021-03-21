@@ -14,11 +14,9 @@ body{
     background: rgb(100, 92, 105);
 }
 
-img{
+#profile-pic{
     border-radius: 50%;
     height: 250px;
-    float: right;
-    top: 50px;
 }
 
 .container{
@@ -29,7 +27,7 @@ img{
     padding: 40px 0;
     flex-wrap: wrap;
 }
-.container .box{
+.wrapper{
     position: relative;
     width: 1400px;
     height: 700px;
@@ -41,10 +39,10 @@ img{
     margin: 20px 30px;
     transition: 0.5s;
 }
-.container .box:hover{
+.wrapper:hover{
     transform: translateY(-20px);
 }
-.container .box::before
+.wrapper::before
 {
     content: '';
     position: absolute;
@@ -55,7 +53,7 @@ img{
     background: linear-gradient(45deg, #292c28,#00d0ff);
 
 }
-.container .box::after
+.wrapper::after
 {
     content: '';
     position: absolute;
@@ -67,7 +65,7 @@ img{
     filter: blur(30px);
 }
 
-.container .box span{
+.wrapper span{
     position: absolute;
     top: 6px;
     left: 6px;
@@ -76,7 +74,7 @@ img{
     background: rgba(0,0,0,0.6);
     z-index: 2;
 }
-.container .box span::before
+.wrapper span::before
 {
     content:'';
     position: absolute;
@@ -87,26 +85,29 @@ img{
     background: rgba(255,255,255,0.1);
     pointer-events: none;
 }
-.container .box .content
+.details
 {
     position: relative;
     z-index: 10;
+    width: 100%;
     padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
 }
-.container .box .content h2
+.details h2
 {
     font-size: 2em;
     color: #fff;
     margin-bottom: 10px;
 }
-.container .box .content p
+.details p
 {
     font-size: 1.1em;
     color: #fff;
     margin-bottom: 10px;
     line-height: 1.4em;
 }
-.container .box .content a
+.details a
 {
     display: inline-block;
     font-size: 1.1em;
@@ -115,4 +116,27 @@ img{
     padding: 10px;
     text-decoration: none;
     font-weight: 700;
+}
+
+#intro{
+    width: 20%;
+    height: 100%;
+    z-index: 12;
+    justify-content: center;
+    align-items: center;
+}
+
+#project-roles{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    z-index: 12;
+    justify-content: center;
+    align-items: center;
+}
+
+#project-roles li{
+    margin-left: 120px;
+    font-size: 1.1em;
 }

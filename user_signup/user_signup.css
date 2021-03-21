@@ -184,7 +184,7 @@ h4 span {
 #price:not(:active) + #h4-container h4 {
     opacity: 0;
     margin-top: -50px;
-    /* Wont react topointer events */
+    /* Wont react to pointer events */
     pointer-events: none;
 }
 
