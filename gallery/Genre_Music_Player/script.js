@@ -22,13 +22,17 @@ function loadSong(song) {
     audio.src = `../musics/${song}.mp3`;
     cover.src = `../images/${song}.jfif`;
     let e = new CustomEvent("myCustomEvent", {
-      detail: { play: true, song: song, default_song },
+        detail: {
+            play: true,
+            song: song,
+            default_song
+        },
     });
-    frame.contentDocument.dispatchEvent(e);    
+    frame.contentDocument.dispatchEvent(e);
 }
 
 //play song
-function playSong(){
+function playSong() {
     musicContainer.classList.add('play');
     playBtn.querySelector('i.fas').classList.remove('fa-play');
     playBtn.querySelector('i.fas').classList.add('fa-pause');
@@ -46,10 +50,10 @@ function pauseSong() {
 }
 
 //prev song
-function prevSong(){
-    songIndex -- ;
-    if(songIndex < 0){
-        songIndex = songs.length -1;
+function prevSong() {
+    songIndex--;
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
     }
 
     loadSong(songs[songIndex]);
@@ -70,11 +74,14 @@ function nextSong() {
 }
 
 // update progress
-function updateProgress(e){
-    const { duration, currentTime } = e.srcElement;
+function updateProgress(e) {
+    const {
+        duration,
+        currentTime
+    } = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%`
-    
+
 }
 
 
@@ -82,24 +89,30 @@ function updateProgress(e){
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play');
 
-    if(isPlaying) {
+    if (isPlaying) {
         pauseSong();
         let e = new CustomEvent("myCustomEvent", {
-          detail: { play: false, default_song },
+            detail: {
+                play: false,
+                default_song
+            },
         });
-        frame.contentDocument.dispatchEvent(e);    
-    }else {
+        frame.contentDocument.dispatchEvent(e);
+    } else {
         playSong();
         let e = new CustomEvent("myCustomEvent", {
-          detail: { play: true, default_song },
+            detail: {
+                play: true,
+                default_song
+            },
         });
-        frame.contentDocument.dispatchEvent(e);    
+        frame.contentDocument.dispatchEvent(e);
     }
 });
 
-function setProgress(e){
+function setProgress(e) {
     const width = this.clientWidth;
-    const clickX = e.offsetX ;
+    const clickX = e.offsetX;
     const duration = audio.duration;
 
     audio.currentTime = (clickX / width) * duration;
@@ -119,5 +132,3 @@ progressContainer.addEventListener('click', setProgress);
 
 //song ends
 audio.addEventListener('ended', nextSong)
-
-

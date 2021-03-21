@@ -161,7 +161,7 @@ You oughta know by now how much I love you
 The world may change my whole life through
 But nothing's gonna change my love for
 Nothing's gonna change my love for you
-`;  
+`;
 
 let nothingStop = `
 Lookin' in your eyes

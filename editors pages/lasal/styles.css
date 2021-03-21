@@ -1,11 +1,11 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: Consolas;
 }
 
-body{
+body {
     display: flex;
     overflow: hidden;
     justify-content: center;
@@ -14,12 +14,12 @@ body{
     background: rgb(100, 92, 105);
 }
 
-#profile-pic{
+#profile-pic {
     border-radius: 50%;
     height: 250px;
 }
 
-.container{
+.container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -27,7 +27,8 @@ body{
     padding: 40px 0;
     flex-wrap: wrap;
 }
-.wrapper{
+
+.wrapper {
     position: relative;
     width: 1400px;
     height: 700px;
@@ -39,54 +40,55 @@ body{
     margin: 20px 30px;
     transition: 0.5s;
 }
-.wrapper:hover{
+
+.wrapper:hover {
     transform: translateY(-20px);
 }
-.wrapper::before
-{
+
+.wrapper::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #292c28,#00d0ff);
+    background: linear-gradient(45deg, #292c28, #00d0ff);
 
 }
-.wrapper::after
-{
+
+.wrapper::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #340f5d,#00d0ff);
+    background: linear-gradient(45deg, #340f5d, #00d0ff);
     filter: blur(30px);
 }
 
-.wrapper span{
+.wrapper span {
     position: absolute;
     top: 6px;
     left: 6px;
     right: 6px;
     bottom: 6px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 2;
 }
-.wrapper span::before
-{
-    content:'';
+
+.wrapper span::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     pointer-events: none;
 }
-.details
-{
+
+.details {
     position: relative;
     z-index: 10;
     width: 100%;
@@ -94,21 +96,21 @@ body{
     display: flex;
     flex-direction: column;
 }
-.details h2
-{
+
+.details h2 {
     font-size: 2em;
     color: #fff;
     margin-bottom: 10px;
 }
-.details p
-{
+
+.details p {
     font-size: 1.1em;
     color: #fff;
     margin-bottom: 10px;
     line-height: 1.4em;
 }
-.details a
-{
+
+.details a {
     display: inline-block;
     font-size: 1.1em;
     color: #111;
@@ -118,7 +120,7 @@ body{
     font-weight: 700;
 }
 
-#intro{
+#intro {
     width: 20%;
     height: 100%;
     z-index: 12;
@@ -126,7 +128,7 @@ body{
     align-items: center;
 }
 
-#project-roles{
+#project-roles {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -136,7 +138,7 @@ body{
     align-items: center;
 }
 
-#project-roles li{
+#project-roles li {
     margin-left: 120px;
     font-size: 1.1em;
 }

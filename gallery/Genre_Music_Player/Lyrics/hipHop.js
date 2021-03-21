@@ -69,7 +69,7 @@ My Glock told me to promise you gon' squeeze me (woo)
 You better let me go the day you need me (woo)
 Soon as you up me on that nigga, get to bustin' (woo)
 And if I ain't enough, go get the chop
-`; 
+`;
 
 console.log("hello");
 
@@ -192,7 +192,7 @@ Bitch nigga pull up ya panty
 Hope you killas understand me
 Panda, Panda
 Panda, Panda, Panda, Panda, Panda
-`; 
+`;
 
 
 let popStar = `
@@ -260,7 +260,7 @@ Bitches callin' my phone like I'm locked up, nonstop
 From the plane to the fuckin' helicopter, yeah
 Cops pullin' up like I'm givin' drugs out, nah, nah
 I'm a popstar, not a doctor
-`; 
+`;
 
 
 let trapQueen = `
@@ -336,7 +336,7 @@ Money out of sight 'cause fights
 Put up or shut up, huh?
 Nitt Da Gritt, huh, RGF Productions
 Squad
-`; 
+`;
 
 
 let blueberry = `
@@ -406,4 +406,3 @@ Two small bands just to take you out real quick (Bands)
 Three more hoes, pull up, I'm fucking shit (Yeah)
 That's how it go, big bands, I'm thumbin' shit
 `;
-

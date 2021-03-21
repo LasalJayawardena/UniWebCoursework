@@ -31,11 +31,12 @@
     cursor: default;
 }
 
-.modal-dialog > * {
+.modal-dialog>* {
     padding: 1rem;
 }
 
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
     background: #efefef;
 }
 
@@ -49,7 +50,7 @@
     font-size: 1.5rem;
 }
 
-.modal p + p {
+.modal p+p {
     margin-top: 1rem;
 }
 
@@ -77,12 +78,13 @@
     transform: none;
 }
 
-h1{
+h1 {
     color: bisque;
     font-size: 2.5em;
 }
 
-.open-modal, .btn {
+.open-modal,
+.btn {
     font-weight: bold;
     background: rgb(71, 89, 104);
     color: #c0baba;

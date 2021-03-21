@@ -28,9 +28,9 @@ class TxtRotate {
         if (!play) {
             setTimeout(() => this.tick(), 100);
             return;
-        }        
+        }
         // Adds extra letter and if all lyrics are diplayed then return.
-        if(this.txt.length < this.toRotate.length){
+        if (this.txt.length < this.toRotate.length) {
             this.txt = this.toRotate.substring(0, this.txt.length + 1);
         }
 
@@ -44,8 +44,8 @@ class TxtRotate {
 }
 
 
-let currText; 
-let currSong="";
+let currText;
+let currSong = "";
 
 
 const lyrics_generator = (song) => {
@@ -55,22 +55,22 @@ const lyrics_generator = (song) => {
         currText = new TxtRotate(elements, toRotate, "400", song);
     }
 };
- 
 
-const handleE = (e) =>{
+
+const handleE = (e) => {
     play = e.detail["play"];
     let song = e.detail["song"];
     let default_song = e.detail["default_song"];
     // Song is not availableor if itis thefirst time play default song
-    if(!song){
-        if(currSong == ""){
+    if (!song) {
+        if (currSong == "") {
             song = default_song;
-        }else{
+        } else {
             song = currSong;
         }
     }
     // If song has changed then make a new lyrcs generator 
-    if(song && (song != currSong)){ 
+    if (song && (song != currSong)) {
         currSong = song;
         lyrics_generator(song);
     }

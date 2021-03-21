@@ -365,6 +365,3 @@ Then you know you have to go
 Fast and furious! (キタ!) (Drift, Drift, Drift)
 Fast and furious! (キタ!) (Drift, Drift, Drift)
 `;
-
-
-

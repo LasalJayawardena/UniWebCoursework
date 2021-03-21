@@ -66,7 +66,8 @@ h2 {
     margin-bottom: 5px;
 }
 
-.form-control input,select {
+.form-control input,
+select {
     border: 2px solid #f0f0f0;
     border-radius: 4px;
     display: block;
@@ -75,16 +76,19 @@ h2 {
     font-size: 14px;
 }
 
-.form-control input,select:focus {
+.form-control input,
+select:focus {
     outline: 0;
     border-color: #777;
 }
 
-.form-control.success input,select {
+.form-control.success input,
+select {
     border-color: var(--success-color);
 }
 
-.form-control.error input,select {
+.form-control.error input,
+select {
     border-color: var(--error-color);
 }
 
@@ -113,7 +117,7 @@ h2 {
     width: 100%;
 }
 
-.form .oppBtn{
+.form .oppBtn {
     background-color: #2ecc71;
 }
 
@@ -123,6 +127,7 @@ h4 {
     color: #999;
     font-weight: 500;
 }
+
 h4::before {
     content: "$";
     padding-left: 1px;
@@ -165,7 +170,7 @@ h4 {
     transform-origin: center -10px;
     transform: translateX(-50%);
     transition: margin-top 0.15s ease-in-out,
-    opacity 0.15s ease-in-out;
+        opacity 0.15s ease-in-out;
     z-index: 2;
 }
 
@@ -181,10 +186,9 @@ h4 span {
     z-index: -1;
 }
 
-#price:not(:active) + #h4-container h4 {
+#price:not(:active)+#h4-container h4 {
     opacity: 0;
     margin-top: -50px;
     /* Wont react to pointer events */
     pointer-events: none;
 }
-

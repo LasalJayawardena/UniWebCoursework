@@ -82,7 +82,7 @@ const checkLength = (input, min, max) => {
 }
 
 // Check if the two passwords match
-const checkPasswordsMatch = (input1, input2)  => {
+const checkPasswordsMatch = (input1, input2) => {
     if (input1.value !== input2.value) {
         showError(input2, 'Passwords do not match');
         return false;
@@ -100,7 +100,7 @@ const getFieldName = (input) => {
 // Usef javascipt event listeners over html because form onsubmit was messy.
 
 var form1Done = false;
-form.addEventListener('submit', (e)  =>{
+form.addEventListener('submit', (e) => {
     // Stops the default action of the form1 which is a redirection,,
     // In this case to prevent reloading the page.
     e.preventDefault();
@@ -108,13 +108,13 @@ form.addEventListener('submit', (e)  =>{
     // Check if inputs are empty
     let Rcheck = checkRequired([username, email, password, password2]);
     let Lcheck = checkLength(username, 3, 15);
-    let Lcheck2 =checkLength(password, 6, 25);
+    let Lcheck2 = checkLength(password, 6, 25);
     let mailC = checkEmail(email);
     let pass = checkPasswordsMatch(password, password2);
 
     // Check if all the inputs in form1 are filled properly
     // If not does not allow to proceed 
-    if(!(Rcheck && Lcheck && Lcheck2 && mailC && pass)){
+    if (!(Rcheck && Lcheck && Lcheck2 && mailC && pass)) {
         return;
     }
     // updates a global vaiable used finally to check if the entire formed is filled.
@@ -140,7 +140,7 @@ form2.addEventListener("submit", (e) => {
     // If not does not allow to proceed 
     if (!(Rcheck && Lcheck && Lcheck2 && Lcheck3)) {
         return;
-    } 
+    }
 
     // updates a global vaiable used finally to check if the entire formed is filled.
     form2Done = true;
@@ -167,13 +167,13 @@ form3.addEventListener("submit", (e) => {
 
     // Corner case where it tackles the possibility of users manually 
     // Changig display of the forms and submiting without filling properly.
-    if(!(form1Done && form2Done)){
-        return 
+    if (!(form1Done && form2Done)) {
+        return
     }
 
     // Start countdown for redirection.
     redirect();
-    
+
     // Make the modal appear.
     modal_win.classList.add(isVisible);
 });
@@ -183,17 +183,17 @@ form3.addEventListener("submit", (e) => {
 const pRange = document.getElementById("price");
 const pH4 = document.querySelector("h4");
 const pSpan = document.querySelector("h4 span");
-const prefPrice = document.getElementById("prefPrice"); 
+const prefPrice = document.getElementById("prefPrice");
 let rangePercent = pRange.value;
 
 const displayPrice = () => {
     // Get the value from slider
     rangePercent = pRange.value;
     prefPrice.innerHTML = `$ ${rangePercent}`;
-    pH4.innerHTML = "<span></span>"+rangePercent;
+    pH4.innerHTML = "<span></span>" + rangePercent;
     // Change hue of slider and bubble to make orangish look
     pRange.style.filter = "hue-rotate(" + (rangePercent / 1000) * 200 + "deg)";
-    pH4.style.filter = "hue-rotate(" + ( (rangePercent / 1000)*200) + "deg)";
+    pH4.style.filter = "hue-rotate(" + ((rangePercent / 1000) * 200) + "deg)";
     pH4.style.transform = `translateX(-1px) scale(${1 + rangePercent / 1000})`;
     // Move the price bubble to right as the slider moves
     pH4.style.left = `${rangePercent/10}%`;
@@ -208,13 +208,13 @@ const back2 = document.getElementById("back2");
 // If so direct to main else direct back to the page he came from.
 const cancelSignin = () => {
     // Used 2 beause chrome landing page counts as 1.
-    if(history.length > 2){
+    if (history.length > 2) {
         history.back();
-    }else{
+    } else {
         // used .href insteadof replace so the user can come back to form 
         window.location.href = "../main.html";
     }
-  
+
 };
 
 // Shows the first form while hiding the second one

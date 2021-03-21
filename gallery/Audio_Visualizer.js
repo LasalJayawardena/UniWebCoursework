@@ -1,7 +1,9 @@
 class AudioVisualizer {
     INTERVAL = null;
     FFT_SIZE = 512;
-    TYPE = { lounge: "renderLounge" };
+    TYPE = {
+        lounge: "renderLounge"
+    };
 
     constructor(cfg) {
         this.isPlaying = false;
@@ -284,7 +286,7 @@ class AudioVisualizer {
 function createVisualizer(cfg) {
     let visualizer = new AudioVisualizer(cfg);
 
-    // Simulated a method chaining effect because this was returned from each method.
+    // Simulated a method chaining effect because 'this' was returned from each method.
     visualizer
         .setContext()
         .setAnalyser()
@@ -300,22 +302,20 @@ function createVisualizer(cfg) {
 // Variable to access current Audio Context 
 var curr;
 
-document.addEventListener("DOMContentLoaded", () => 
-    {
-        // Create an audio visualizerassoon as DOM elemnts are available
-        curr = createVisualizer({
-            autoplay: true,
-            loop: true,
-            audio: "myAudio3",
-            canvas: "myCanvas",
-            style: "lounge",
-            barWidth: 2,
-            barHeight: 25,
-            barSpacing: 7,
-            barColor: "#cafdff",
-            shadowBlur: 20,
-            shadowColor: "#ffffff",
-            font: ["18px", "Helvetica"],
-        });
-    }
-);
+document.addEventListener("DOMContentLoaded", () => {
+    // Create an audio visualizerassoon as DOM elemnts are available
+    curr = createVisualizer({
+        autoplay: true,
+        loop: true,
+        audio: "myAudio3",
+        canvas: "myCanvas",
+        style: "lounge",
+        barWidth: 2,
+        barHeight: 25,
+        barSpacing: 7,
+        barColor: "#cafdff",
+        shadowBlur: 20,
+        shadowColor: "#ffffff",
+        font: ["18px", "Helvetica"],
+    });
+});

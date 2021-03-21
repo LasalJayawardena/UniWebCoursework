@@ -19,9 +19,9 @@ const changeSong = (song) => {
 };
 
 
-const HandleDClick = async (e) =>{
+const HandleDClick = async (e) => {
     let song = e.target.getAttribute("data-audio");
-    if(curr.audio.id != song){
+    if (curr.audio.id != song) {
         changeSong(song);
         for (const d of disks) {
             if (d == e.target) {
@@ -30,31 +30,31 @@ const HandleDClick = async (e) =>{
                 d.style.animationPlayState = "paused";
             }
         }
-    }else{
+    } else {
         await curr.pausePlay();
         for (const d of disks) {
             if (d == e.target) {
-                if(curr.ctx.state== "suspended"){
+                if (curr.ctx.state == "suspended") {
                     d.style.animationPlayState = "paused";
-                }else{
+                } else {
                     d.style.animationPlayState = "running";
                 }
-            } 
+            }
         }
     }
 
 }
 
 const disks = document.querySelectorAll(".img-container img");
-for(const d of disks){
-    d.addEventListener("click",HandleDClick);
+for (const d of disks) {
+    d.addEventListener("click", HandleDClick);
 }
 
 const imageLinks = document.querySelectorAll(".imgL");
 
-const mouseOverLink = (e) =>{
+const mouseOverLink = (e) => {
     for (const img of imageLinks) {
-        if(img != e.target){
+        if (img != e.target) {
             img.classList.remove("ungray");
             img.classList.add("gray");
         }
@@ -69,7 +69,7 @@ const mouseLevaeLink = (e) => {
 };
 
 
-for(const img of imageLinks){
+for (const img of imageLinks) {
     img.addEventListener("mouseenter", mouseOverLink);
     img.addEventListener("mouseleave", mouseLevaeLink);
 }

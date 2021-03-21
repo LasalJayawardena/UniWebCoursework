@@ -90,7 +90,7 @@ Que Esto Sólo Empieza
 Mueve La Cabeza
 Danza Kuduro
 A&X...
-`; 
+`;
 
 
 let bailando = `
@@ -203,7 +203,7 @@ Oh-oh-oh, ba-baby girl
 Oh-oh-oh, stay with me, girl
 Oh-oh-oh, play with me, girl
 Oh-oh-oh, ba-baby girl
-`; 
+`;
 
 
 let despacito = `
@@ -291,7 +291,7 @@ Nos vamos pegando, poquito a poquito (eh-oh)
 Hasta provocar tus gritos (eh-oh) (Fonsi)
 Y que olvides tu apellido (DY)
 Despacito
-`; 
+`;
 
 
 let equis = `
@@ -339,7 +339,7 @@ No voy a hablar mucho
 Deja que el beat siga rompiendo
 Yeah
 Woah
-`; 
+`;
 
 
 
@@ -420,5 +420,4 @@ Hoy vamos a juntar la luna y el sol
 Súbeme la radio
 Tra-Tráeme el alcohol
 Súbeme la radio
-`; 
-
+`;

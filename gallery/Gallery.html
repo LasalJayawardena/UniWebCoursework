@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,37 +10,49 @@
     <link rel="stylesheet" href="./footer.css">
     <title>Gallery 📷 Page</title>
 </head>
+
 <body>
     <nav role="navigation">
-        <div id="menuToggle"> 
+        <div id="menuToggle">
 
-        <input name="toggle" type="checkbox" />
-        <label for="toggle">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
+            <input name="toggle" type="checkbox" />
+            <label for="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
 
 
-        <ul id="menu">
-            <a href="../../main.html"><li>Home</li></a>
-            <a href=""><li>Gallery</li></a>
-            <a href="#"><li>Shop</li></a>
-            <a href="../user_signup/user_signup.html"><li>Sign Up</li></a>
-            <a href="#"><li>Contact us</li></a>
-        </ul>
+            <ul id="menu">
+                <a href="../../main.html">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>Gallery</li>
+                </a>
+                <a href="#">
+                    <li>Shop</li>
+                </a>
+                <a href="../user_signup/user_signup.html">
+                    <li>Sign Up</li>
+                </a>
+                <a href="#">
+                    <li>Contact us</li>
+                </a>
+            </ul>
 
         </div>
     </nav>
     <main role="main" aria-label="Audio Visualizer">
         <h1 role="heading">Top Trending Beatz</h1>
         <div class="vz-wrapper" role="document">
-            <audio id="myAudio" src="./music/allNight.mp3" data-author="Lionel Richie" data-title="All night long"></audio>
+            <audio id="myAudio" src="./music/allNight.mp3" data-author="Lionel Richie"
+                data-title="All night long"></audio>
             <audio id="myAudio2" src="./music/bailando.mp3" data-author="latin dude" data-title="Bailiando"></audio>
             <audio id="myAudio3" src="./music/bioject.mp3" data-author="Shinpi" data-title="Bioject"></audio>
             <audio id="myAudio4" src="./music/blueberry.mp3" data-author="ryan G" data-title="Blueberry"></audio>
             <audio id="myAudio5" src="./music/bomdiggy.mp3" data-author="chairay" data-title="Bomdiggy"></audio>
-            
+
             <div class="vz-wrapper -canvas">
                 <canvas id="myCanvas" width="800" height="500"></canvas>
             </div>
@@ -78,11 +91,11 @@
                 <a target="_blank" href="./Genre_Music_Player/Funk_Genre/funkG.html">
                     <img class="imgL" src="./album_images/funk.jpg" alt="Funk">
                 </a>
-            </div>     
+            </div>
         </div>
 
         <div class="col2" role="gridcell">
-            <div class="genres"role="gridcell">
+            <div class="genres" role="gridcell">
                 <a target="_blank" href="./Genre_Music_Player/Hip_Hop_Genre/hipHopG.html">
                     <img class="imgL" src="./album_images/hipop.jpg" alt="Hip Hop">
                 </a>
@@ -106,14 +119,14 @@
                 <a target="_blank" href="./Genre_Music_Player/Rock_Genre/rockG.html">
                     <img class="imgL" src="./album_images/rock.jpg" alt="Rock">
                 </a>
-            </div>    
+            </div>
         </div>
-       
-        
+
+
     </aside>
 
-    
-    <footer role="contentinfo"  aria-label="Page Creator">
+
+    <footer role="contentinfo" aria-label="Page Creator">
         <p>Created by <a target="_blank" href="../editors pages/lasal/main.html">Lasal Jayawardena</a></p>
         <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <!-- Store wave object -->
@@ -133,4 +146,5 @@
     <script src="./Audio_Visualizer.js"></script>
     <script src="./Gallery.js"></script>
 </body>
+
 </html>
