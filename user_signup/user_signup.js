@@ -132,8 +132,8 @@ form2.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let Rcheck = checkRequired([Mname, surname, gender, occupation]);
-    let Lcheck = checkLength(Mname, 3, 20);
-    let Lcheck2 = checkLength(surname, 3, 20);
+    let Lcheck = checkLength(Mname, 2, 20);
+    let Lcheck2 = checkLength(surname, 2, 20);
     let Lcheck3 = checkLength(occupation, 4, 30);
 
     // Check if all the inputs in form2 are filled properly

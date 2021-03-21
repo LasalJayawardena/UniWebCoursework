@@ -36,7 +36,7 @@ const redirect = () => {
         time--;
         timepan.innerHTML = `${time}s`;
         if (time == 0) {
-            window.location.replace("../main.html");
+            window.location.replace("../gallery/Gallery.html");
             clearInterval(t);
         }
     }, 1000);
