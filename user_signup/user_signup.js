@@ -212,7 +212,7 @@ const cancelSignin = () => {
         history.back();
     } else {
         // used .href insteadof replace so the user can come back to form 
-        window.location.href = "../main.html";
+        window.location.href = "../mainpage/main.html";
     }
 
 };

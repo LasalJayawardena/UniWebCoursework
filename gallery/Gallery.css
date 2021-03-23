@@ -68,6 +68,12 @@ h1 {
     margin-bottom: -20px;
 }
 
+h1 img{
+    position: relative;
+    top:15px;
+    height: 70px;
+}
+
 footer {
     position: fixed;
     bottom: -50px;
@@ -100,7 +106,7 @@ footer {
 
 .vz-wrapper.-canvas {
     position: absolute;
-    top: 40%;
+    top: 43%;
     left: 34%;
     transform: translate(-50%, -50%);
     height: initial;
