@@ -27,6 +27,8 @@
             <h2>404</h2>
             <h4>Page under Construction</h4>
             <br>
+            <a id="back">Go Back</a>
+            <br>
             <a href="../main.html">Back To Home</a>
         </div>
     </main>
@@ -49,6 +51,18 @@
                 cover.remove();
                 loader.remove();
             }, 2000)
+        });
+
+        const back = document.getElementById("back");
+
+        back.addEventListener("click", (e) => {
+            // Used 2 beause chrome landing page counts as 1.
+            if (history.length > 2) {
+                history.back();
+            } else {
+                // used .href insteadof replace so the user can come back to form 
+                window.location.href = "../main.html";
+            }
         });
     </script>
 </body>
