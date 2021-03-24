@@ -20,7 +20,7 @@
         <div class="modal-dialog">
             <header class="modal-header">
                 Thank you for you time!
-                <button class="close-modal" aria-label="close modal" data-close onclick="closeModal()">
+                <button class="close-modal" aria-label="Close" data-close onclick="closeModal()">
                     ✕
                 </button>
             </header>
@@ -44,22 +44,24 @@
             <h2>Register With Us</h2>
             <div class="form-control">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter username" data-desc="Username">
+                <input type="text" id="username" placeholder="Enter username" data-desc="Username" aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter email" data-desc="Email">
+                <input type="text" id="email" placeholder="Enter email" data-desc="Email" aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter password" data-desc="Password">
+                <input type="password" id="password" placeholder="Enter password" data-desc="Password"
+                    aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="password2">Confirm Password</label>
-                <input type="password" id="password2" placeholder="Re-enter password" data-desc="Re-Entered Password">
+                <input type="password" id="password2" placeholder="Re-enter password" data-desc="Re-Entered Password"
+                    aria-required="true">
                 <small>Error message</small>
             </div>
             <button id="cancelbtn" class="oppBtn" type="button" role="navigation"
@@ -73,17 +75,19 @@
             <h2>Personal Details</h2>
             <div class="form-control">
                 <label for="Maidenname">Maiden Name</label>
-                <input type="text" id="Maidenname" placeholder="Enter your first name" data-desc="Maiden Name">
+                <input type="text" id="Maidenname" placeholder="Enter your first name" data-desc="Maiden Name"
+                    aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="surname">Surname</label>
-                <input type="text" id="surname" placeholder="Enter your surname" data-desc="Surname">
+                <input type="text" id="surname" placeholder="Enter your surname" data-desc="Surname"
+                    aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="gender">Gender</label>
-                <select name="gender" id="gender" data-desc="Gender">
+                <select name="gender" id="gender" data-desc="Gender" aria-required="true">
                     <option value="1">Male</option>
                     <option value="2">Female</option>
                     <option value="3">Other</option>
@@ -93,7 +97,8 @@
             </div>
             <div class="form-control">
                 <label for="occupation">Occupation</label>
-                <input type="text" id="occupation" placeholder="Enter your current Occupatin" data-desc="Occupation">
+                <input type="text" id="occupation" placeholder="Enter your current Occupatin" data-desc="Occupation"
+                    aria-required="true">
                 <small>Error message</small>
             </div>
             <button id="back1" class="oppBtn" type="button" onclick="backAction1()" role="button">Go Back</button>
@@ -107,12 +112,13 @@
             <div class="form-control">
                 <label for="FavouriteArtist">Favourite Artist</label>
                 <input type="text" id="FavouriteArtist" placeholder="Enter your favourite artist"
-                    data-desc="Favourite Artist">
+                    data-desc="Favourite Artist" aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="price">Preferred Price $50 to <span id="prefPrice">$50</span></label>
-                <input type="range" id="price" value="0" min="50" max="1000" oninput="displayPrice()">
+                <input type="range" id="price" value="0" min="50" max="1000" oninput="displayPrice()"
+                    aria-required="true">
                 <div id="h4-container">
                     <div id="h4-subcontainer">
                         <h4><span></span>0</h4>
@@ -121,12 +127,13 @@
             </div>
             <div class="form-control">
                 <label for="MusicMode">Preffered way of listening to music</label>
-                <input type="text" id="MusicMode" placeholder="Eg... phone, cassete, walkman" data-desc="Mode of Music">
+                <input type="text" id="MusicMode" placeholder="Eg... phone, cassete, walkman" data-desc="Mode of Music"
+                    aria-required="true">
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="Mail">Get Updates Via Mail 📧</label>
-                <select name="Mail" id="Mail" data-desc="Mail">
+                <select name="Mail" id="Mail" data-desc="Mail" aria-required="true">
                     <option value="1">Yes</option>
                     <option value="2">No</option>
                     <option selected value="">-------</option>
