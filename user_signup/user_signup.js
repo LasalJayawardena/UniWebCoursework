@@ -17,7 +17,7 @@ const container2 = document.getElementById("container2");
 // all Form3 elements 
 const FavouriteArtist = document.getElementById("FavouriteArtist");
 const price = document.getElementById("price");
-const MusicMode = document.getElementById("MusicMode");
+const prefResults = document.getElementById("prefResults");
 const Mail = document.getElementById("Mail");
 const container3 = document.getElementById("container3");
 
@@ -96,10 +96,34 @@ const getFieldName = (input) => {
     return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
+// Check if afield has anumerandi within a givwn range
+const checkNum = (input, min, max) => {
+    let value = parseInt(input.value);
+    if (isNaN(value)) {
+        showError(input,
+            `${getFieldName(input)} must be a number`
+        );
+        return false;
+    } else if (value > max) {
+        showError(input,
+            `${getFieldName(input)} must be less than ${max}`
+        );
+        return false;
+    } else if (value < min) {
+        showError(input,
+            `${getFieldName(input)} must be at least ${min}`
+        );
+        return false;
+    } else {
+        showSuccess(input);
+        return true;
+    }
+}
+
 //================Form Event listener Methods====================
 // Usef javascipt event listeners over html because form onsubmit was messy.
 
-var form1Done = false;
+let form1Done = false;
 form.addEventListener('submit', (e) => {
     // Stops the default action of the form1 which is a redirection,,
     // In this case to prevent reloading the page.
@@ -125,7 +149,7 @@ form.addEventListener('submit', (e) => {
     container2.style.display = "block";
 });
 
-var form2Done = false;
+let form2Done = false;
 form2.addEventListener("submit", (e) => {
     // Stops the default action of the form2 which is a redirection,,
     // In this case to prevent reloading the page.
@@ -155,20 +179,20 @@ form3.addEventListener("submit", (e) => {
     // In this case to prevent reloading the page.
     e.preventDefault();
 
-    let Rcheck = checkRequired([FavouriteArtist, MusicMode, Mail]);
+    let Rcheck = checkRequired([FavouriteArtist, prefResults, Mail]);
     let Lcheck = checkLength(FavouriteArtist, 3, 20);
-    let Lcheck2 = checkLength(MusicMode, 3, 20);
+    let Lcheck2 = checkNum(prefResults, 1, 300);
 
     // Check if all the inputs in form3 are filled properly
-    // If not does not allow to proceed 
+    // If not does not allow to proceed
     if (!(Rcheck && Lcheck && Lcheck2)) {
         return;
     }
 
-    // Corner case where it tackles the possibility of users manually 
+    // Corner case where it tackles the possibility of users manually
     // Changig display of the forms and submiting without filling properly.
     if (!(form1Done && form2Done)) {
-        return
+        return;
     }
 
     // Start countdown for redirection.
@@ -212,7 +236,7 @@ const cancelSignin = () => {
         history.back();
     } else {
         // used .href insteadof replace so the user can come back to form 
-        window.location.href = "../mainpage/main.html";
+        window.location.href = "../main.html";
     }
 
 };

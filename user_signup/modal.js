@@ -31,7 +31,7 @@ const timepan = document.getElementById("reidrectTime");
 const redirectMsg = document.getElementById("rMsg");
 const redirect = () => {
     redirectMsg.innerHTML = `Dear ${Mname.value}, Thank you for registering with Euphoria, You will be directed to our Gallery page.`;
-    let time = 6;
+    let time = 5;
     let t = setInterval(() => {
         time--;
         timepan.innerHTML = `${time}s`;
