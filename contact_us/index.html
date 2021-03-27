@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="styles.css">
+
     <script src="scripts.js"></script>
 </head>
-
+<!-- Body -->
 <body class="contactuscss">
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input name="toggle" type="checkbox" />
+            <label for="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <ul id="menu">
+                <a href="">
+                    <li>Home</li>
+                </a>
+                <a href="./gallery/Gallery.html">
+                    <li>Gallery</li>
+                </a>
+                <a href="./404_error_page/index.html">
+                    <li>Shop</li>
+                </a>
+                <a href="./js quiz/index.html">
+                    <li>Quiz</li>
+                </a>
+                <a href="./user_signup/user_signup.html">
+                    <li>Sign Up</li>
+                </a>
+                <a href="./contact_us/index.html">
+                    <li>Contact us</li>
+                </a>
+                <a href="././about_us/about_us.html">
+                    <li>About us</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <!-- Background -->
     <div class="background">
-        <main class="borderbox">
+        <!-- Box for the Form -->
+        <div class="borderbox">
             <h2>Contact Us</h2>
             <div id="error_message"></div>
             <div id="success_message"></div>
             <form id="contactForm">
+                <!-- Input Fields -->
                 <div class="text_input">
                     <input type="text" placeholder="First Name" id="fname">
                 </div>
@@ -32,15 +68,17 @@
                 <div class="text_input">
                     <textarea id="message" placeholder="Message"></textarea>
                 </div>
-                <select id="country">
+                <!-- Drop Down Box -->
+                <select id="rating">
                     <option value="None" selected>-- Select Rating --</option>
                     <option value="ID001">1 Star</option>
                     <option value="ID002">2 Star</option>
                     <option value="ID003">3 Star</option>
                     <option value="ID003">4 Star</option>
                     <option value="ID003">5 Star</option>
-
+                    
                 </select>
+                <!-- Submit And Reset Buttons -->
                 <div class="buttondefault">
                     <input type="submit" onclick="return validation()">
                 </div>
@@ -48,8 +86,14 @@
                     <input type="reset" onclick="return resetForm">
                 </div>
             </form>
-        </main>
+        </div>
+    </div>
+    <!-- Footer Area -->
+    <div class="bottom">
+        <footer>
+            <h1>Link To Editors Page</h1>
+            <a href="#"><h1>Nithila Ariyapperuma</h1></a>
+        </footer>
     </div>
 </body>
-
 </html>
