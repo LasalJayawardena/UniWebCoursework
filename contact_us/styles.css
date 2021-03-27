@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* Styles for the entire body */
 .contactuscss {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -6,10 +8,11 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
-    background-image: url("images/bg.jpg");
+    background: rgb(151, 158, 255);
     background-size: auto;
 }
 
+/* Box for the form */
 .borderbox {
     position: fixed;
     top: 50%;
@@ -20,9 +23,9 @@
     background: #fff;
     padding: 25px;
     border-radius: 5px;
-    box-shadow: 4px 4px 4px rgb(47, 0, 255);
+    box-shadow: 4px 4px 4px rgb(255, 255, 255);
 }
-
+/* Header */
 .borderbox h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -31,25 +34,27 @@
     color: black;
     font-weight: 1000000px;
 }
-
+/* Input Area */
 .borderbox .text_input {
     margin-bottom: 10px;
     margin-right: 20px;
 }
 
+/* Input Area For The Form */
 .borderbox .text_input input[type="text"],
 .borderbox textarea {
     width: 100%;
     border: 1px solid #e0e0e0;
     padding: 10px;
-    box-shadow: 1px 1px rgb(17, 0, 253);
+    box-shadow: 1px 1px rgb(255, 255, 255);
 }
-
+/* Input Area For The Form Message Area */
 .borderbox textarea {
     height: 80px;
     resize: none;
 }
 
+/* Submit Button*/
 .borderbox .buttondefault input[type="submit"] {
     border: 0;
     margin-top: 15px;
@@ -64,6 +69,7 @@
     cursor: pointer;
 }
 
+/* Buttons*/
 .borderbox .buttondefault input[type="reset"] {
     border: 0;
     margin-top: 15px;
@@ -78,6 +84,7 @@
     cursor: pointer;
 }
 
+/* Error Message*/
 .borderbox #error_message {
     margin-bottom: 20px;
     padding: 0px;
@@ -87,6 +94,7 @@
     transition: all 0.5s ease;
 }
 
+/* Success Message*/
 .borderbox #success_message {
     margin-bottom: 20px;
     padding: 0px;
@@ -94,4 +102,139 @@
     text-align: center;
     font-size: 14px;
     transition: all 0.5s ease;
+}
+
+.bottom footer{
+    text-align: center;
+    color: black;
+    background-color: #ff00bf;
+    font-size: 9px;
+}
+
+
+
+
+/* Navbar styles */
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: #4f7794;
+}
+
+
+/* The hamburger button hidden inside an input element */
+#menuToggle input {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    /* To hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+#menuToggle label {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+/*
+ * Hamburger Menu Icon
+ */
+#menuToggle label div {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin-bottom: 6px;
+    position: relative;
+    /* background: #cdcdcd; */
+    background: #b83030;
+    border-radius: 3px;
+    z-index: 1;
+    -webkit-transform-origin: 4px 0px;
+    -ms-transform-origin: 4px 0px;
+    transform-origin: 4px 0px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+#menuToggle label div:first-child {
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+}
+
+#menuToggle label div:nth-child(2) {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+}
+
+ 
+/* Change the color of the hamburger when toggled */
+
+#menuToggle input:checked+label div {
+    background: #232323;
+}
+
+
+ /* * Use absolute positioning to place the menu off-screen */
+
+#menu {
+    position: absolute;
+    width: 150px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    height: 100vh;
+    background: #ededed;
+    list-style-type: none;
+    /* Hide the menu off-screen to the left */
+    left: -100%;
+    -webkit-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+}
+
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+/*
+ * Slide the menu in from left when the input is checked
+ */
+#menuToggle input:checked~ul {
+    left: 0;
 }
