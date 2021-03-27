@@ -1,24 +1,37 @@
 //Starter Page
+
 let start = document.querySelector(".startarea");
+
 //Rules Section
+
 let guide = document.querySelector(".rules");
 let exit = document.querySelector(".exit");
 let continueBtn = document.querySelector(".next");
+
 //Quiz
+
 let quiz = document.querySelector(".quiz");
 let time = document.querySelector(".time");
+
 //Questions
+
 let questionNo = document.querySelector(".questionNo");
 let questionText = document.querySelector(".questioninfo");
+
 //MCQ's
+
 let option1 = document.querySelector("#answer1");
 let option2 = document.querySelector("#answer2");
 let option3 = document.querySelector("#answer3");
 let option4 = document.querySelector("#answer4");
+
 //Buttons
+
 let total_correct = document.querySelector(".correct_total");
 let next_question = document.querySelector(".continue_question");
+
 //Rewards
+
 let result = document.querySelector(".rewards");
 let points = document.querySelector(".marks");
 let quit = document.querySelector(".quit");
@@ -27,21 +40,31 @@ let choice_que = document.querySelectorAll(".choice_que");
 let index = 0;
 let timer = 0;
 let interval = 0;
+
 //Total
+
 let correct = 0;
+
 //Answers
+
 let UserAns = undefined;
+
 //Start Button Functions On Click
+
 start.addEventListener("click", () => {
     start.style.display = "none";
     guide.style.display = "block";
 });
+
 //Exit Button Functions On Click
+
 exit.addEventListener("click", () => {
     start.style.display = "block";
     guide.style.display = "none";
 });
+
 //Timer
+
 let countDownTimer = () => {
     if (timer === 30) {
         clearInterval(interval);
@@ -65,6 +88,7 @@ let DataGetter = () => {
 DataGetter();
 
 //  Next Button Functions On Click
+
 continueBtn.addEventListener("click", () => {
     quiz.style.display = "block";
     guide.style.display = "none";
@@ -84,16 +108,20 @@ continueBtn.addEventListener("click", () => {
 choice_que.forEach((mcqs, chosenmcqNo) => {
     mcqs.addEventListener("click", () => {
         mcqs.classList.add("active");
+
         //Verifying Answer
+
         if (chosenmcqNo === MCQS[index].answer) {
             correct++;
         } else {
             correct += 0;
         }
         //Stopper
+
         clearInterval(interval);
 
         //Locking in one answer when user selects
+
         for (i = 0; i <= 3; i++) {
             choice_que[i].classList.add("disabled");
         }
@@ -103,6 +131,7 @@ choice_que.forEach((mcqs, chosenmcqNo) => {
 // Next Button Functions On Click
 
 next_question.addEventListener("click", () => {
+
     //   if index chosen is out of MCQS range
     if (index !== MCQS.length - 1) {
         index++;
@@ -111,9 +140,11 @@ next_question.addEventListener("click", () => {
         })
 
         //Question Is Fetched
+
         DataGetter();
 
         //Answer checked
+        
         total_correct.style.display = "block";
         total_correct.innerHTML = `${correct} Out Of ${MCQS.length} Questions`;
         clearInterval(interval);
@@ -123,17 +154,18 @@ next_question.addEventListener("click", () => {
 
 
         //Rewards Section
+
         clearInterval(interval);
         quiz.style.display = "none";
-        if (correct < 4){
+        if (correct < 3){
             points.innerHTML = `You Got A Bronze Medal!`;
 
         }
-        if (correct < 7){
+        else if (correct < 7){
             points.innerHTML = `You Got A Silver Medal!`;
 
         }
-        if (correct < 11){
+        else if (correct < 11){
             points.innerHTML = `You Got A Gold Medal!`;
 
         }
@@ -154,6 +186,7 @@ quit.addEventListener("click", () => {
 });
 
 //Restart Button Functions On Click
+
 startAgain.addEventListener("click", () => {
     guide.style.display = "block";
     result.style.display = "none";
