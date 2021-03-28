@@ -1,6 +1,8 @@
-let testmusic = document.getElementById("testmusic");
-let playbutton = document.getElementById("playbutton");
+let testmusic = document.getElementById("testmusic"); //accessing the testmusic div tag in html
+let playbutton = document.getElementById("playbutton"); //accessing the play button div tag in html
 
+
+//Play & Pause Function
 playbutton.onclick = function() {
     if (testmusic.paused) {
         testmusic.play();
