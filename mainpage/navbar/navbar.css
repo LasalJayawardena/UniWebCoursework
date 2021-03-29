@@ -101,7 +101,8 @@
     padding: 50px;
     padding-top: 125px;
     height: 100vh;
-    background: #ededed;
+    /* background: #ededed; */
+    background-color: rgba(237,237,237, 0.65);
     list-style-type: none;
     /* Hide the menu off-screen to the left */
     left: -100%;
