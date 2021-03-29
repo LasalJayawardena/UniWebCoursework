@@ -14,8 +14,8 @@
     display: grid;
     place-items:center;
     height: 100vh;
-    background: rgb(0,43,255);
-    background: linear-gradient(351deg, rgb(47, 0, 255) 0%, rgb(0, 68, 255) 50%, rgb(0, 141, 54) 100%);
+    background: rgb(255, 255, 255);
+
 }
 
 /* Flex Container for the quiz */
@@ -34,7 +34,7 @@
     text-align: center;
     padding: 1px 0;
     background: #ffffff;
-    color: rgb(17, 0, 255);
+    color: rgb(0, 0, 0);
     font-size: 35px;
     font-weight: 700;
     border-radius: 30px;
@@ -46,7 +46,9 @@
 
 .startarea:hover {
     background: #0004ff;
-    color: #e7f1fa;
+    color: #ffffff;
+    transition: 0.5s;
+
 }
 
 
@@ -57,9 +59,9 @@
     height: auto;
     width: 580px;
     padding: 20px;
-    background: #e7f1fa;
+    background: #696bff;
     border-radius: 30px 10px;
-    border: 1px solid #b0c4d8;
+    border: 1px solid #ffffff;
     display: none;
 }
 
@@ -104,6 +106,7 @@
 
 .rules .buttons button:hover {
     background: #1100ff;
+    transition: 0.4s;
 }
 
 .quiz {
@@ -114,7 +117,7 @@
 .quiz .quizheading {
     height: 60px;
     width: 100%;
-    background: #fafafc;
+    background: #bebeff;
     position: absolute;
     top: 0;
     left: 0;
@@ -128,13 +131,13 @@
 .quiz .quizheading h5 {
     font-size: 28px;
     margin: 0 20px;
-    color: #1900ff;
+    color: #8052ff;
 }
 
 .quiz .quizheading .timer {
     height: 50px;
     width: 200px;
-    background: #1100ff;
+    background: #5754ff;
     color: #e7f1fa;
     border: 1px solid #b0c4d8;
     font-size: 18px;
@@ -183,6 +186,7 @@
 
 
 .quiz #optionList {
+    margin-top: 19px;
     height: 400px;
     width: 100%;
     position: absolute;
@@ -190,6 +194,7 @@
 }
 
 .quiz #optionList h4 {
+    
     height: 50px;
     width: 535px;
     background: #00346e;
@@ -198,7 +203,7 @@
     border-radius: 7px;
     padding: 0 20px;
     font-size: 20px;
-    color: #fff;
+    color: rgb(238, 238, 238);
     overflow: hidden;
     border: 1px solid #b0c4d8;
     cursor: pointer;
@@ -206,10 +211,14 @@
 
 .quiz #optionList h4:hover {
     background: #07006e;
+    transition: 0.4s;
+
 }
 
 .quiz #optionList .active {
-    background: #0d002b;
+    background: #1100ff;
+    transition: 0.4s;
+
 }
 
 .quiz #optionList .disabled {
@@ -221,7 +230,7 @@
 .quiz .answersArea {
     height: 60px;
     width: 100%;
-    background: #fafafc;
+    background: #c3c3ff;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -253,7 +262,9 @@
 }
 
 .quiz .answersArea h3:hover {
-    background: #3700ff;
+    background: #000000;
+    transition: 0.4s;
+
 }
 
 .quiz .answersArea h3:first-child:hover {
@@ -280,6 +291,7 @@
     position: absolute;
     top: 30px;
     left: 120px;
+    margin-left: 30px;
 }
 
 .quizcontainer .rewards h6 {
@@ -317,7 +329,9 @@
 }
 
 .quizcontainer .rewards button:hover {
-    background: #0400ff;
+    background: #000000;
+    transition: 0.4s;
+
 }
 
 .footer footer{
