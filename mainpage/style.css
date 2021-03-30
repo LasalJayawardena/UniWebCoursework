@@ -97,7 +97,9 @@
     width: 200px;
     height: 200px;
     perspective: 1000px;
-    margin-left: 200px;
+    left:50%;
+    right:50%;
+    margin-left: 22%;
     margin-top: 100px;
     border-color: red;
     border-width: 120px;
