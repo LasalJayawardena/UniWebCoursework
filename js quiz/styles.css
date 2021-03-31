@@ -5,7 +5,9 @@
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    /* overflow: hidden; */
+}
+.bg{
+    background-color: rgb(165, 231, 221);
 }
 
 /* Entire Body */
@@ -21,7 +23,7 @@
     display: grid;
     place-items:center;
     height: 100vh;
-    background: rgb(255, 255, 255);
+    background: rgb(165, 231, 221);
 
 }
 
