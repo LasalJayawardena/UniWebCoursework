@@ -8,7 +8,6 @@ body {
     background: rgba(109, 65, 165, 0.50);
     background-size: cover;
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -54,6 +53,7 @@ aside {
     width: 30vw;
     height: 100vh;
     flex-grow: inherit;
+    z-index: 5;
 }
 
 aside .col1,
@@ -76,14 +76,20 @@ h1 img{
 
 footer {
     position: fixed;
-    bottom: -50px;
+    bottom: -30px;
     left: 30%;
+}
+
+nav{
+    height: 0;
+    width: 0;
 }
 
 .genres {
     /* width: 300px; */
     width: 100%;
-    height: 170px;
+    height: 150px;
+    cursor: pointer;
 }
 
 .genres img {
@@ -92,9 +98,15 @@ footer {
     cursor: pointer;
 }
 
+.genres a {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
 .vz-wrapper {
     /* position: relative; */
-    height: 55vh;
+    height: 57vh;
     width: 70%;
     margin: 0 auto;
     /* background: -webkit-radial-gradient(circle, #588181, #2f2841); */

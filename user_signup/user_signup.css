@@ -103,7 +103,8 @@ select {
 }
 
 .form-control small {
-    color: var(--error-color);
+    /* color: var(--error-color); */
+    color: #A12312;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -112,11 +113,12 @@ select {
 
 .form-control.error small {
     visibility: visible;
+    color: #423230;
 }
 
 .form button {
     cursor: pointer;
-    background-color: #3498db;
+    background-color: #0c5383;
     border: 2px solid #3498db;
     border-radius: 4px;
     color: #fff;
@@ -128,7 +130,9 @@ select {
 }
 
 .form .oppBtn {
-    background-color: #2ecc71;
+    /* background-color: #2ecc71; */
+    background-color: #00C471;
+    color:#141414;
 }
 
 /* Price bubble animaton styles */
@@ -167,7 +171,7 @@ h4::before {
     position: relative;
 }
 
-h4 {
+#h4-subcontainer h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,6 +179,7 @@ h4 {
     top: 0;
     width: 40px;
     height: 40px;
+    font-weight: 500;
     color: #fff !important;
     font-size: 12px;
     transform-origin: center -10px;
@@ -184,7 +189,7 @@ h4 {
     z-index: 2;
 }
 
-h4 span {
+#h4-subcontainer h1 span {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -196,7 +201,7 @@ h4 span {
     z-index: -1;
 }
 
-#price:not(:active)+#h4-container h4 {
+#price:not(:active)+#h4-container h1 {
     opacity: 0;
     margin-top: -50px;
     /* Wont react to pointer events */

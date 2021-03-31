@@ -61,7 +61,7 @@ const mouseOverLink = (e) => {
     }
 }
 
-const mouseLevaeLink = (e) => {
+const mouseLeaveLink = (e) => {
     for (const img of imageLinks) {
         img.classList.remove("gray");
         img.classList.add("ungray");
@@ -71,7 +71,7 @@ const mouseLevaeLink = (e) => {
 
 for (const img of imageLinks) {
     img.addEventListener("mouseenter", mouseOverLink);
-    img.addEventListener("mouseleave", mouseLevaeLink);
+    img.addEventListener("mouseleave", mouseLeaveLink);
 }
 
 

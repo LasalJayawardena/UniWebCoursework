@@ -205,8 +205,8 @@ form3.addEventListener("submit", (e) => {
 
 // ========= Functionality for the price range animation =================
 const pRange = document.getElementById("price");
-const pH4 = document.querySelector("h4");
-const pSpan = document.querySelector("h4 span");
+const pH4 = document.querySelector("#h4-subcontainer h1");
+const pSpan = document.querySelector("#h4-subcontainer span");
 const prefPrice = document.getElementById("prefPrice");
 let rangePercent = pRange.value;
 
