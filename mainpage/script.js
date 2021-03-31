@@ -10,6 +10,5 @@ playbutton.onclick = function() {
     } else {
         testmusic.pause();
         playbutton.src = "./mainpage/mainpageresources/images/play-button.png";
-
     }
 }
