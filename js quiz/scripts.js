@@ -92,36 +92,27 @@ DataGetter();
 continueBtn.addEventListener("click", () => {
     quiz.style.display = "block";
     guide.style.display = "none";
-
     interval = setInterval(countDownTimer, 1000);
     DataGetter();
-
     //    Reset All Acitve Classes when starting new question
-
     choice_que.forEach(removeActive => {
         removeActive.classList.remove("active");
     })
-
     total_correct.innerHTML = `${correct = 0} Out Of ${MCQS.length} Questions`;
 });
 
 choice_que.forEach((mcqs, chosenmcqNo) => {
     mcqs.addEventListener("click", () => {
         mcqs.classList.add("active");
-
         //Verifying Answer
-
         if (chosenmcqNo === MCQS[index].answer) {
-            correct++;
+            correct=correct +2;
         } else {
-            correct += 0;
+            correct =  correct-1;
         }
         //Stopper
-
         clearInterval(interval);
-
         //Locking in one answer when user selects
-
         for (i = 0; i <= 3; i++) {
             choice_que[i].classList.add("disabled");
         }
@@ -138,36 +129,30 @@ next_question.addEventListener("click", () => {
         choice_que.forEach(removeActive => {
             removeActive.classList.remove("active");
         })
-
         //Question Is Fetched
-
         DataGetter();
-
         //Answer checked
         
         total_correct.style.display = "block";
-        total_correct.innerHTML = `${correct} Out Of ${MCQS.length} Questions`;
+        total_correct.innerHTML = `${correct}  Marks`;
         clearInterval(interval);
         interval = setInterval(countDownTimer, 1000);
     } else {
         index = 0;
-
-
         //Rewards Section
-
         clearInterval(interval);
         quiz.style.display = "none";
         if (correct < 3){
+            document.getElementById("medal").style.color = "bronze";
             points.innerHTML = `You Got A Bronze Medal!`;
-
         }
         else if (correct < 7){
+            document.getElementById("medal").style.color = "silver";
             points.innerHTML = `You Got A Silver Medal!`;
-
         }
         else if (correct < 11){
+            document.getElementById("medal").style.color = "gold";
             points.innerHTML = `You Got A Gold Medal!`;
-
         }
         
         
