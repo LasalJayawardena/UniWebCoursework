@@ -1,3 +1,24 @@
+// Variable to access current Audio Context
+let curr;
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Create an audio visualizerassoon as DOM elemnts are available
+    curr = createVisualizer({
+        autoplay: true,
+        loop: true,
+        audio: "myAudio3",
+        canvas: "myCanvas",
+        style: "lounge",
+        barWidth: 2,
+        barHeight: 25,
+        barSpacing: 7,
+        barColor: "#cafdff",
+        shadowBlur: 20,
+        shadowColor: "#ffffff",
+        font: ["18px", "Helvetica"],
+    });
+});
+
 const changeSong = (song) => {
     curr.pauseSound();
     for (let member in curr) delete curr[member];
@@ -17,7 +38,6 @@ const changeSong = (song) => {
     });
     curr.pausePlay();
 };
-
 
 const HandleDClick = async (e) => {
     let song = e.target.getAttribute("data-audio");
@@ -42,8 +62,7 @@ const HandleDClick = async (e) => {
             }
         }
     }
-
-}
+};
 
 const disks = document.querySelectorAll(".img-container img");
 for (const d of disks) {
@@ -59,7 +78,7 @@ const mouseOverLink = (e) => {
             img.classList.add("gray");
         }
     }
-}
+};
 
 const mouseLeaveLink = (e) => {
     for (const img of imageLinks) {
@@ -68,12 +87,10 @@ const mouseLeaveLink = (e) => {
     }
 };
 
-
 for (const img of imageLinks) {
     img.addEventListener("mouseenter", mouseOverLink);
     img.addEventListener("mouseleave", mouseLeaveLink);
 }
-
 
 document.addEventListener("click", async (e) => {
     if (e.target === curr.canvas) {

@@ -283,7 +283,7 @@ class AudioVisualizer {
 
 }
 
-function createVisualizer(cfg) {
+const createVisualizer = (cfg) => {
     let visualizer = new AudioVisualizer(cfg);
 
     // Simulated a method chaining effect because 'this' was returned from each method.
@@ -298,24 +298,3 @@ function createVisualizer(cfg) {
 
     return visualizer;
 }
-
-// Variable to access current Audio Context 
-var curr;
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Create an audio visualizerassoon as DOM elemnts are available
-    curr = createVisualizer({
-        autoplay: true,
-        loop: true,
-        audio: "myAudio3",
-        canvas: "myCanvas",
-        style: "lounge",
-        barWidth: 2,
-        barHeight: 25,
-        barSpacing: 7,
-        barColor: "#cafdff",
-        shadowBlur: 20,
-        shadowColor: "#ffffff",
-        font: ["18px", "Helvetica"],
-    });
-});
