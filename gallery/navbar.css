@@ -1,6 +1,6 @@
 /* 
     Navbar styles 
-    slight changes from main main stylesheet
+    slight addiions apart from main main stylesheet
 */
 
 nav {
@@ -13,6 +13,11 @@ nav {
 
 #menuToggle a {
     color: #0e0027;
+}
+
+/* Bread Crumb effect */
+#menuToggle a:nth-child(2) {
+    color: #a9ecf5;
 }
 
 #menuToggle a:hover {

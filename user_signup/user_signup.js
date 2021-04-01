@@ -48,7 +48,7 @@ const checkEmail = (input) => {
     }
 }
 
-// Check if a given input is emtpty, if so call show Error
+// Check if a given inputs in the array are empty, if so call show Error
 const checkRequired = (inputArr) => {
     // Keep track whether all are not empty.
     let allOk = true

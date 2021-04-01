@@ -124,7 +124,7 @@ class AudioVisualizer {
 
     loadSound = function () {
         // Request an binary data buffer from audio element
-        // True topass to makesure it is async
+        // True to pass to make sure it is async
         let req = new XMLHttpRequest();
         req.open("GET", this.audioSrc, true);
         req.responseType = "arraybuffer";
@@ -242,7 +242,7 @@ class AudioVisualizer {
     };
 
     renderByStyleType = function () {
-        // to call render renderLounge aimation
+        // to call render renderLounge animation
         return this[this.TYPE[this.style]]();
     };
 
