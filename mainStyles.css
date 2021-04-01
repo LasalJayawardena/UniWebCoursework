@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&family=Poppins:wght@800;900&display=swap');
 
-:root{
-    --common-font: 'Roboto', sans-serif;
-}
-
 .Mainbodycss {
     margin: 0;
     padding: 0;
@@ -12,12 +8,12 @@
     height: 100vh;
     width: auto;
     overflow-x: hidden;
-    background: url(./mainpageresources/images/background.jpg) no-repeat center center fixed;
+    background: url(./mainpage/mainpageresources/images/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: var(--common-font);
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Logo */
@@ -72,13 +68,15 @@
 }
 /* Cards section 1 */
 .trendingitems1 {
-    margin-left: -20px;
+    padding-right: 500px;
 }
 /* Cards section 2 */
 
 .trendingitems2 {
     margin-left: 450px;
     margin-top: -900px;
+    padding-right: 190px;
+
 }
 /* Cards section 3 */
 
@@ -89,7 +87,7 @@
 /* Cards section 4 */
 
 .trendingitems4 {
-    margin-left: 400px;
+    margin-left: 00px;
     margin-top: -900px;
 }
 
