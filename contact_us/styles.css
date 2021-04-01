@@ -115,6 +115,28 @@ footer{
     font-size: 10px;
     
 }
+.footer a{
+    font-size: 15px;
+    
+}
+.footer a:link{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+}
+.footer a:visited{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+}
+.footer a:hover{
+    color: rgb(255, 0, 0);
+    background-color: rgb(255, 192, 192);
+    text-decoration: underline;
+    border-radius: 15px;
+    padding: 10px;
+}
+
 
 /* Navbar styles */
 
