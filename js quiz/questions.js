@@ -1,108 +1,108 @@
 let MCQS = [{
     //Question 1
-            question: "How is covid-19 passed on?",
-    answer1: "Through droplets that come from nose and mouth",
-    answer2: "By drinking unclean water",
-    answer3: "All of above",
-    answer4: "Can be sexually transmitted",
+            question: "Who encouraged the world to ‘Get Down on It’ in 1981?",
+    answer1: "Kool and the Gang",
+    answer2: "Backstreet Boys",
+    answer3: "One Direction",
+    answer4: "Maroon Five",
     answer: 0
 },
 
     //Question 2
 
             {
-            question: "What are the common symptoms of covid-19?",
-    answer1: "A new and continuous cough",
-    answer2: "Fever",
-    answer3: "Tiredness",
-    answer4: "All of the above",
+            question: "Who released the album 'Freedom' in the 00's",
+    answer1: "Justin Bieber",
+    answer2: "Katy Perry",
+    answer3: "Shakira",
+    answer4: "Akon",
     answer: 3
 },
     //Question 3
 
             {
-            question: "Can you always tell if someone has covid-19?",
-    answer1: "No, not everyone with covid-19 has symptoms",
-    answer2: "Yes, it will be obvious,a person with covid-19 coughs a lot",
-    answer3: "Yes, you can tell just by where a person comes from,their race and ethnicity",
-    answer4: "Yes, they have Blue Patches on skin",
+            question: "3 of the top 15 best-selling albums of the 00s belong to which 4-piece band?",
+    answer1: "Coldplay",
+    answer2: "Linkin Park",
+    answer3: "Nirvana",
+    answer4: "Backstreet Boys",
     answer: 0
 },
 
     //Question 4
 
             {
-            question: "Can washing your hands protect you from covid-19?",
-    answer1: "Yes, but only if you a strong bleach",
-    answer2: "Yes, normal soap and water or hand sanitizer is enough",
-    answer3: "No, washing your hands doesn't stop Covid-19",
-    answer4: "No, only God can protect you from Covid-19",
+            question: "'Who am I? Someone who's afraid to let go' who's lyrics are these?",
+    answer1: "Marshmello",
+    answer2: "XXXTentacion",
+    answer3: "Lil-Wayne",
+    answer4: "Logic",
     answer: 1
 },
 
     //Question 5
 
             {
-            question: "Which of the following people is covid-19 more dangerous for?",
-    answer1: "Children",
-    answer2: "Older people and People with certain underlying health conditions",
-    answer3: "European People",
-    answer4: "Asian People",
+            question: "'So wake me up when it's all over' who's lyrics are these?",
+    answer1: "Lil-Peep",
+    answer2: "Avicii",
+    answer3: "John Smith",
+    answer4: "BTS",
     answer: 1
 },
 
     //Question 6
 
     {
-        question: "Each of the following statements is True, Except :",
-        answer1: "Viruses come in different types",
-        answer2: "Viruses infect living cells",
-        answer3: "Viruses can replicate without hosts",
-        answer4: "Viruses can cause illnesses",
+        question: "Where is it thought that the banjo originated?",
+        answer1: "England",
+        answer2: "New York",
+        answer3: "Africa",
+        answer4: "Colombia",
         answer: 2
     },
 
     //Question 7
 
     {
-        question: "When should fabric face masks be worn?",
-        answer1: "On public transport",
-        answer2: "In confined or crowded spaces",
-        answer3: "In small shops",
-        answer4: "All of the above",
+        question: "Which artist hit fame at a very young age",
+        answer1: "Drake",
+        answer2: "John Legend",
+        answer3: "Avicii",
+        answer4: "Justin Bieber",
         answer: 3
     },
 
     //Question 8
 
     {
-        question: "Can covid-19 be cured?",
-        answer1: "Yes - hot drinks can cure covid-19",
-        answer2: "No - covid-19 is a death sentence",
-        answer3: "No - but most people get better by themselves",
-        answer4: "Yes - Sunbathing can cure covid-19",
+        question: "Who released 'RAP GOD'?",
+        answer1: "50 Cent",
+        answer2: "Flipside",
+        answer3: "Eminem",
+        answer4: "Travis-Scott",
         answer: 2
     },
 
     //Question 9
 
     {
-        question: "Which of the following is an example of physical distancing?",
-        answer1: "You stop going to crowded places and visiting other people houses",
-        answer2: "You stop talking to the people you live with",
-        answer3: "Older people and People with certain underlying health conditions",
-        answer4: "You stop sleeping with your partner",
-        answer: 2
+        question: "Which artists dated each other",
+        answer1: "Justin and Selena",
+        answer2: "Travis and Katy",
+        answer3: "Beyonce and G-Eazy",
+        answer4: "Shakira and Rixton",
+        answer: 0
     },
 
     //Question 10
 
     {
-        question: "What does the 19 in covid-19 stand for?",
-        answer1: "It is the year the virus was first encountered",
-        answer2: "It refers to the 19 molecules that make up the virus",
-        answer3: "It is the 19th coronavirus identifies since the WHO began naming them",
-        answer4: "It says how many years will covid-19 lasts",
+        question: "Who released 'WAKA-WAKA'",
+        answer1: "Shakira",
+        answer2: "Akon",
+        answer3: "Flo-Rida",
+        answer4: "Sean Paul",
         answer: 0
     }
 ];
