@@ -297,3 +297,6 @@
 #menuToggle input:checked~ul {
     left: 0;
 }
+#menuToggle a:nth-child(1) {
+    color: #ff2bd1;
+}
