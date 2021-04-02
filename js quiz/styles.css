@@ -402,7 +402,7 @@
 }
 
 #menuToggle a:hover {
-    color: #00aeff;
+    color: #ff00c8;
 }
 
 
@@ -501,4 +501,8 @@
  */
 #menuToggle input:checked~ul {
     left: 0;
+
+}
+#menuToggle a:nth-child(4) {
+    color: #ff2bd1;
 }
