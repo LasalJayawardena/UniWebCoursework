@@ -77,7 +77,7 @@ class AudioVisualizer {
             // reset timer
             this.resetTimer();
             this.isPlaying = false;
-            // Create anew buffer node
+            // Create a new buffer node
             this.sourceNode = this.ctx.createBufferSource();
         }.bind(this);
 
@@ -137,7 +137,7 @@ class AudioVisualizer {
 
         // Call function after request is complete
         // To decode audio data
-        // Ifsuccesful play audio
+        // If succesful play audio
         // If not handle error
         req.onload = function () {
             this.ctx.decodeAudioData(
