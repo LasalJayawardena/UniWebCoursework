@@ -7,7 +7,6 @@ body {
     overflow-x: hidden;
     background: rgba(109, 65, 165, 0.50);
     background-size: cover;
-    backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -65,7 +64,7 @@ h1 {
     font-size: 3em;
     /* Taken from main style sheet */
     font-family: var(--common-font);
-    font-weight: 900;
+    font-weight: 600;
     color: rgb(44, 37, 78);
     margin-bottom: -20px;
 }

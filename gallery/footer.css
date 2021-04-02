@@ -1,7 +1,7 @@
 /* Footer Styles */
 
 footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: -22%;
     width: 100vw;

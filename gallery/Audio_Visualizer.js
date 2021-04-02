@@ -5,15 +5,15 @@ class AudioVisualizer {
         lounge: "renderLounge"
     };
 
-    constructor(cfg) {
+    constructor(initialDict) {
         this.isPlaying = false;
-        this.autoplay = cfg.autoplay || false;
-        this.loop = cfg.loop || false;
-        this.audio = document.getElementById(cfg.audio) || {};
-        this.canvas = document.getElementById(cfg.canvas) || {};
-        this.canvasCtx = this.canvas.getContext("2d") || null;
-        this.author = this.audio.getAttribute("data-author") || "";
-        this.title = this.audio.getAttribute("data-title") || "";
+        this.autoplay = initialDict.autoplay || false;
+        this.loop = initialDict.loop || false;
+        this.audio = document.getElementById(initialDict.audio) ;
+        this.canvas = document.getElementById(initialDict.canvas) ;
+        this.canvasCtx = this.canvas.getContext("2d") ;
+        this.author = this.audio.getAttribute("data-author") ;
+        this.title = this.audio.getAttribute("data-title") ;
         this.ctx = null;
         this.analyser = null;
         this.sourceNode = null;
@@ -22,14 +22,14 @@ class AudioVisualizer {
         this.duration = 0;
         this.minutes = "00";
         this.seconds = "00";
-        this.style = cfg.style || "lounge";
-        this.barWidth = cfg.barWidth || 2;
-        this.barHeight = cfg.barHeight || 2;
-        this.barSpacing = cfg.barSpacing || 5;
-        this.barColor = cfg.barColor || "#ffffff";
-        this.shadowBlur = cfg.shadowBlur || 10;
-        this.shadowColor = cfg.shadowColor || "#ffffff";
-        this.font = cfg.font || ["12px", "Helvetica"];
+        this.style = initialDict.style;
+        this.barWidth = initialDict.barWidth;
+        this.barHeight = initialDict.barHeight;
+        this.barSpacing = initialDict.barSpacing;
+        this.barColor = initialDict.barColor;
+        this.shadowBlur = initialDict.shadowBlur;
+        this.shadowColor = initialDict.shadowColor;
+        this.font = initialDict.font ;
         this.gradient = null;
     }
 
@@ -283,8 +283,8 @@ class AudioVisualizer {
 
 }
 
-const createVisualizer = (cfg) => {
-    let visualizer = new AudioVisualizer(cfg);
+const createVisualizer = (initialDict) => {
+    let visualizer = new AudioVisualizer(initialDict);
 
     // Simulated a method chaining effect because 'this' was returned from each method.
     visualizer

@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const changeSong = (song) => {
     curr.pauseSound();
+    // Delete object
     for (let member in curr) delete curr[member];
     curr = createVisualizer({
         autoplay: true,
