@@ -151,33 +151,32 @@
 /* Footer */
 .footer{
     position: absolute;
-    width: 1330px;
+    width: 1500px;
     background-color:rgb(255, 140, 140) ;
     margin-top: 30px;
 }
 .footer h1{
     color: rgba(0, 0, 0, 0.698);
-    padding-left: 40%;
+    padding-left: 35%;
 }
 .footer a{
     font-size: 17px;
     background-color: #232323;
-    padding-left: 40%;
+    padding-left: 35%;
 
 }
 .footer a:link{
     color: rgb(0, 0, 0);
     background-color: transparent;
     text-decoration: none;
-    padding-left: 40%;
+    padding-left: 35%;
 
 }
 .footer a:visited{
     color: rgb(0, 0, 0);
     background-color: transparent;
     text-decoration: none;
-    padding-left: 40%;
-
+    padding-left: 35%;
 }
 .footer a:hover{
     color: rgb(0, 0, 0);
@@ -185,7 +184,7 @@
     text-decoration: underline;
     border-radius: 15px;
     padding: 10px;
-    margin-left: 40%;
+    margin-left: 35%;
 
 }
 
