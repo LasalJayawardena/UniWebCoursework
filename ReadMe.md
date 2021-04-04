@@ -25,7 +25,7 @@ The Website is a **Music Recommendation System.**
 >>
 >>    *  At least three different compulsory criteria to check the user’s preferences (Price, Brand, Features, Type etc)✅
 >>
->>    *  No of items to appear in the result list✅ not sure about thi yet.
+>>    *  No of items to appear in the result list✅
 >>
 >>    *  Use JavaScript validation to check that the user has filled-in the following compulsory fields - personal details, user preferences and number of items. Do NOT use HTML5 validation for this part. (If HTML5 validation used zero marks will be awarded)✅
 >>
@@ -37,55 +37,55 @@ The Website is a **Music Recommendation System.**
 >
 > 5.  Create a page editors page✅
 >
-> 6.  Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2) - Still waiting ... 
+> 6.  Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2) - ✅
 >
 > 7.  Feel free to use additional JavaScript to add interactivity and increase ease of navigation.✅
 > 
-> 8.  The Main page should be designed in a way that the user can access several parts of the web site. The links on the main page should look like buttons and have a hover effect. This should be implemented using CSS
+> 8.  The Main page should be designed in a way that the user can access several parts of the web site. The links on the main page should look like buttons and have a hover effect. This should be implemented using CSS ✅
 >
-> 9. The Main Page should contain a video related to the chosen topic (Eg: Trailer of a movie etc)
+> 9. The Main Page should contain a video related to the chosen topic (Eg: Trailer of a movie etc) ✅
 >
 > 10. The consistency of the style should be ensured using a unique external style sheet file. This will be used by the other members of the group though out the website. 
 >
->>    * Main page
+>>    * Main page ✅
 >>
->>    * Navigation
+>>    * Navigation ✅
 >
-> 11. The web site should contain a form to send comments about the web site. This form should include following
+> 11. The web site should contain a form to send comments about the web site. This form should include following ✅
 >
->>    * Form input fields for users to enter their details (name, email address)
+>>    * Form input fields for users to enter their details (name, email address) ✅
 >>
->>    * Option to rate the web site (using radio buttons or select)
+>>    * Option to rate the web site (using radio buttons or select) ✅
 >>
->>    * A button to reset the forms. When reset button is clicked the form should be reset.
+>>    * A button to reset the forms. When reset button is clicked the form should be reset. ✅
 >>
->>    * The form should be validated using JavaScript validation to check that the user has filled-in the compulsory fields - 'name', ‘email’ and 'rating'. (If HTML5 validation used zero marks will be awarded)
+>>    * The form should be validated using JavaScript validation to check that the user has filled-in the compulsory fields - 'name', ‘email’ and 'rating'. (If HTML5 validation used zero marks will be awarded) ✅
 >>
->>    * If the name, email and ratings are filled-in, the user should get an HTML popup window with the summary including the name, any comments and rating given on the form. 
+>>    * If the name, email and ratings are filled-in, the user should get an HTML popup window with the summary including the name, any comments and rating given on the form. ✅
 >>
->>    * The pop box should give the below message format if all compulsory fields are filled.
+>>    * The pop box should give the below message format if all compulsory fields are filled. ✅
 >>
->>    * Eg: if the user entered "Anna" for their name, rated the site as "good" and entered "Very informative website", "Dear Anna, Thank you very much for your feedback. You have rated our site as Good and your comment was Very informative website."
+>>    * Eg: if the user entered "Anna" for their name, rated the site as "good" and entered "Very informative website", "Dear Anna, Thank you very much for your feedback. You have rated our site as Good and your comment was Very informative website." ✅
 >
-> 12.  A JavaScript quiz should be created to increase the user engagement of the website.
+> 12.  A JavaScript quiz should be created to increase the user engagement of the website. ✅
 >> 
->>    * The quiz should be implemented using JavaScript prompt box ().
+>>    * The quiz should be implemented using JavaScript prompt box (). ✅
 >> 
->>    * It should contain 5 questions related to the topic chosen.
+>>    * It should contain 5 questions related to the topic chosen. ✅
 >> 
->>    * Each question carries 2 marks and -1 for each wrong answer
+>>    * Each question carries 2 marks and -1 for each wrong answer. ✅
 >> 
->>    *  The different badges (Gold, Silver, Bronze) will be awarded to users depending on their performance
+>>    *  The different badges (Gold, Silver, Bronze) will be awarded to users depending on their performance. ✅
 >> 
->>    * When the quiz is completed users will be given the badge awarded with the points earned in a pop up box.
+>>    * When the quiz is completed users will be given the badge awarded with the points earned in a pop up box. ✅
 >> 
->>    * The message should contain “Congratulation! You have earned 12 points with a Silver badge”, please claim the points in your next purchase”
+>>    * The message should contain “Congratulation! You have earned 12 points with a Silver badge”, please claim the points in your next purchase”.✅
 > 
-> 13.  Each page of the web site should include the title logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page.
+> 13.  Each page of the web site should include the title logo at the top, and a link to the page editor (the person who created the page) at the bottom of the page. ✅
 >
-> 14. Create editors page.
+> 14. Create editors page. ✅
 >
-> 15. Feel free to use additional JavaScript to add interactivity and increase ease of navigation.
+> 15. Feel free to use additional JavaScript to add interactivity and increase ease of navigation. ✅
 >
 > 18.  The About Us page contain four pictures of the members of the group. When the user moves the mouse over one picture, the details of that member should be displayed in an area on the page (Eg: you could use a div below the pictures). The details should include the name and role that that student took for the coursework (e.g. John Smith, Student 1). ✅
 >
@@ -102,18 +102,18 @@ The Website is a **Music Recommendation System.**
 >>
 >>    * Use CSS to display the XML information.
 >
-> 24.  Create JavaScript functionality to change the background and text color of the favorite page. (Use pulldown menus)
+> 24.  Create JavaScript functionality to change the background and text color of the favorite page. (Use pulldown menus) ✅
 >
-> 25.  Create a sign up form to subscribe for a personalized newsletter.
+> 25.  Create a sign up form to subscribe for a personalized newsletter. ✅
 >
->>    * Compulsory form input fields (Name, email address)
+>>    * Compulsory form input fields (Name, email address) ✅
 >>
->>    * JavaScript validation to check compulsory fields are filled and valid email address
+>>    * JavaScript validation to check compulsory fields are filled and valid email address ✅
 >>
->>    * If all information are correct , a pop up message should be given with below format “Dear Anne, you have successfully subscribed for a personalized newsletter”
+>>    * If all information are correct , a pop up message should be given with below format “Dear Anne, you have successfully subscribed for a personalized newsletter” ✅
 >
-> 26. Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2)
-> 27. Create editors page
+> 26. Consistency of web style should be ensure through the website. (Re-use external style sheet created by Student 2) 
+> 27. Create editors page 
 > 28. Feel free to use additional JavaScript to add interactivity and increase ease of navigation.
 <br>
 
@@ -125,16 +125,16 @@ The Website is a **Music Recommendation System.**
 ### **The Report.**
 
 Conduct a research on existing systems related to your chosen topic in order to get to know about the features and the context.
-* Introduction and Reference 
+* Introduction and Reference  ✅
 * Research on existing systems (related to chosen topic) 
 * Technical Discussion 
-* Navigation techniques 
-* Color balance/Selection (appropriateness justified through color contrast test) 
-* Typography (font style/size appropriateness justified) 
-* Accessibility Techniques(Text, Tables, Forms, Images) 
-* Accessibility test 
-* Site Diagram 
-* Self-Reflection  
+* Navigation techniques  ✅
+* Color balance/Selection (appropriateness justified through color contrast test) ✅
+* Typography (font style/size appropriateness justified)  ✅
+* Accessibility Techniques(Text, Tables, Forms, Images)  ✅
+* Accessibility test  ✅
+* Site Diagram ✅
+* Self-Reflection ✅  
 <br>
 
 Tools to use:
