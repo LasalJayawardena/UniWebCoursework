@@ -148,3 +148,28 @@ nav {
                 0 0 5px #f00,
                 0 0 5px #f00;
 }
+.footer{
+    margin-top: 700px;
+}
+.footer footer{
+    background: transparent;
+    border-radius: 10px;
+    margin-left: 140px;
+}
+.footer footer a:link{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+}
+.footer footer a:visited{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+}
+.footer footer a:hover{
+    color: rgb(255, 0, 0);
+    background-color: rgb(255, 192, 192);
+    text-decoration: underline;
+    border-radius: 15px;
+    padding: 10px;
+}
