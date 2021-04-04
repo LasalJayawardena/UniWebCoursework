@@ -172,7 +172,7 @@
 /* Footer */
 .footer{
     position: absolute;
-    width: 1500px;
+    width: 100%;
     background-color:rgb(255, 140, 140) ;
     /* margin-top: 30px; */
 }
