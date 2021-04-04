@@ -150,7 +150,7 @@ next_question.addEventListener("click", () => {
             document.getElementById("medal").style.color = "silver";
             points.innerHTML = `You Got A Silver Medal!`;
         }
-        else if (correct < 11){
+        else if (correct > 11){
             document.getElementById("medal").style.color = "gold";
             points.innerHTML = `You Got A Gold Medal!`;
         }
