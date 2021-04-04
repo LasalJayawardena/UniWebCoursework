@@ -1,4 +1,4 @@
-//const generateCharts = () => {
+    /// Main XML functionality
     let BODY = document.querySelector("body");
     let parser, XMLDoc;
 
