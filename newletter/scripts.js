@@ -21,11 +21,11 @@ function checkAvailable(user_input) {
     return true;
 };
 
-function submitonclick(){
+function submitonclick() {
     let userName = document.getElementById("name");
     let userEmail = document.getElementById("email");
-    let userError= document.getElementById("nameError");
-    let emailError= document.getElementById("emailError");
+    let userError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
 
     userError.innerHTML = "";
     emailError.innerHTML = "";
@@ -34,17 +34,15 @@ function submitonclick(){
     let emailValid = emailValidate(userEmail.value);
     let nameValid = checkAvailable(userName);
     let allValid = true;
-    if(!nameValid)
-    {
+    if (!nameValid) {
         allValid = false;
         userError.innerHTML = "Enter a name";
     }
-    if(!emailValid)
-    {
+    if (!emailValid) {
         allValid = false;
         emailError.innerHTML = "Enter a valid email"
     }
-    if(allValid){
+    if (allValid) {
         let popupmsg = document.querySelector(".popup2 h2")
         popupToggle()
         const popup2 = document.getElementsByClassName("popup2");

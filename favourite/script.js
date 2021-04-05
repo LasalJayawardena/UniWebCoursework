@@ -77,14 +77,22 @@
     XMLDoc = parser.parseFromString(text, "text/xml");
     result = "";
     for (const chart of XMLDoc.getElementsByTagName("chart")) {
-        
+
         for (const song of chart.getElementsByTagName("song")) {
             console.log(song.getElementsByTagName("name")[0].textContent);
             console.log(song.getElementsByTagName("artist")[0].textContent);
-            BODY.innerHTML+=`<p class="">${song.getElementsByTagName("name")[0].textContent} - ${song.getElementsByTagName("artist")[0].textContent} </p>`
+            BODY.innerHTML += `<p class="">${song.getElementsByTagName("name")[0].textContent} - ${song.getElementsByTagName("artist")[0].textContent} </p>`
         }
         //result += `${book.childNodes[1].textContent} - ${book.childNodes[3].textContent} <br>`;
     }
     //document.getElementById("results").innerHTML = result;
     //console.log(result);
-//};
+    //};
+
+    function updateTextColour(value) {
+        document.body.style.color = "#" + value;
+    }
+
+    function updateBackColour(value) {
+        document.body.style.backgroundColor = "#" + value;
+    }

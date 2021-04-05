@@ -12,9 +12,27 @@
 
 <body>
 
-    <!-- <button onclick="generateBooks()">
-        Gererate Results
-    </button> -->
+    <form>Change the background color:
+        <select name="backGround" size="1" onChange="updateBackColour(this.value)">
+            <option value="000000">Black</option>
+            <option value="FF0400">Red</option>
+            <option value="EFE800">Yellow</option>
+            <option value="05EF00">Green</option>
+            <option value="0206FF">Blue</option>
+            <option value="FFFFFF" selected>White</option>
+        </select>
+    </form>
+    <br>
+    <form>Change the Font color:
+    <select name="backGround" size="1" onChange="updateTextColour(this.value)">
+        <option value="000000">Black</option>
+        <option value="FF0400">Red</option>
+        <option value="EFE800">Yellow</option>
+        <option value="05EF00">Green</option>
+        <option value="0206FF">Blue</option>
+        <option value="FFFFFF" selected>White</option>
+    </select>
+    </form>
     <br>
     <p id="results"></p>
 
@@ -26,9 +44,8 @@
         </footer>
     </div>
 
-    <script src="script.js">
-    
-    </script>
+    <script src="script.js"></script>
+
 
 </body>
 
