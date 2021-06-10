@@ -1,5 +1,5 @@
-The Website is a **Music Recommendation System.**
-==================================================
+The Website is a **Music Recommendation System.** (Front-End)
+==============================================================
 
 ## Main Functionalities
 <br>
